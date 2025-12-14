@@ -20,8 +20,9 @@ License: GPL
 
 import json
 import sys
+import importlib
 from pathlib import Path
-from typing import Dict, Any, List
+from typing import Dict, Any, List, Callable
 from text_transformer import (
     TextFilter,
     Substitution,
@@ -29,8 +30,33 @@ from text_transformer import (
     SuffixReplacer,
     PrefixReplacer,
     SentenceAugmenter,
-    GlitchTransformer
+    GlitchTransformer,
+    Transformer
 )
+
+
+class PythonModuleTransformer:
+    """Wrapper for Python module-based transformers."""
+
+    def __init__(self, module_path: str, params: Dict[str, Any] = None):
+        """
+        Load a custom Python transformer module.
+
+        Args:
+            module_path: Python module path (e.g., 'filters.duck')
+            params: Optional parameters to pass to transform()
+        """
+        self.module = importlib.import_module(module_path)
+        self.params = params or {}
+
+        if not hasattr(self.module, 'transform'):
+            raise AttributeError(
+                f"Module '{module_path}' must define a transform(text, **kwargs) function"
+            )
+
+    def transform(self, text: str) -> str:
+        """Call the module's transform function."""
+        return self.module.transform(text, **self.params)
 
 
 class FilterFactory:
@@ -38,6 +64,8 @@ class FilterFactory:
     Builds TextFilter instances from JSON configuration.
 
     The JSON file defines all transformations - no Python code needed!
+
+    For custom logic, use "type": "python" to load a Python module.
     """
 
     @staticmethod
@@ -62,6 +90,9 @@ class FilterFactory:
         Build a filter from a configuration dictionary.
 
         Supported keys:
+            - type: "python" for custom Python module (optional)
+            - module: Python module path (required if type is "python")
+            - params: Parameters for Python module (optional)
             - name: Filter name (optional)
             - substitutions: Dict of word/phrase replacements
             - characters: Dict of character replacements
@@ -72,6 +103,19 @@ class FilterFactory:
             - prefix_text: Text to add before output
             - suffix_text: Text to add after output
         """
+        # Handle Python module filters
+        if config.get('type') == 'python':
+            if 'module' not in config:
+                raise ValueError("Python filters must specify 'module' path")
+
+            filter = TextFilter()
+            filter.add(PythonModuleTransformer(
+                config['module'],
+                config.get('params', {})
+            ))
+            return filter
+
+        # Standard JSON-based filter
         filter = TextFilter()
 
         # 1. Substitutions (words and phrases)

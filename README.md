@@ -6,15 +6,15 @@ Transform normal English text in various fun ways - from pirate speak to compute
 
 ```bash
 # Pirate speak
-./python/filter_factory.py pirate "Hello friend, how are you?"
+./src/filter_factory.py pirate "Hello friend, how are you?"
 # "Ahoy matey, how be ye?"
 
 # Computer glitch effect
-./python/filter_factory.py glitch-50 "System malfunction!"
+./src/filter_factory.py glitch-50 "System malfunction!"
 # "S◆s◓●m ▓◅lf◂n◓◀i◍n!"
 
 # 1970s disco slang
-./python/filter_factory.py disco "This party is great!"
+./src/filter_factory.py disco "This party is great!"
 # "This boogie is outta sight!"
 ```
 
@@ -27,14 +27,15 @@ Transform normal English text in various fun ways - from pirate speak to compute
 - Extensive slang dictionaries (100+ terms per filter)
 - Smart word boundary detection and case preservation
 
-**🎨 15 Ready-to-Use Filters**
+**🎨 18 Ready-to-Use Filters**
 - **Accents**: Pirate, German, Swedish Chef, Elmer Fudd, Scottish, Brooklyn/NYC
 - **Subcultures**: 1970s Disco, 1980s Club Kids, 1950s Greasers, 1970s Punks, Hillbilly
-- **Effects**: Computer Glitches (10%, 25%, 50%, 100% corruption)
+- **Effects**: Computer Glitches (10%, 25%, 50%, 100%), Duck, Studly Caps, LOLCAT
 
 **🔧 Extensible Design**
 - SOLID architecture with reusable transformers
-- Custom algorithmic filters in Python
+- Custom algorithmic filters as Python modules
+- Clean separation: JSON for data, Python for algorithms
 - Mix and match transformation patterns
 
 ---
@@ -44,7 +45,7 @@ Transform normal English text in various fun ways - from pirate speak to compute
 ### Using Pre-Made Filters
 
 ```bash
-cd python
+cd src
 
 # Pirate speak
 ./filter_factory.py pirate "Hello my friend! Yes, I am happy."
@@ -63,26 +64,26 @@ cd python
 
 1. **Copy an example JSON file**:
    ```bash
-   cp python/disco.json python/my_filter.json
+   cp src/disco.json src/my_filter.json
    ```
 
 2. **Edit the vocabulary** - no coding needed!
 
 3. **Test it**:
    ```bash
-   ./python/filter_factory.py my_filter "test text"
+   ./src/filter_factory.py my_filter "test text"
    ```
 
-That's it! See [`python/README.md`](python/README.md) for complete documentation.
+That's it! See [`src/README.md`](src/README.md) for complete documentation.
 
 ---
 
 ## 📚 Documentation
 
-- **[python/README.md](python/README.md)** - Complete library documentation
-- **[python/FILTER_SCHEMA.md](python/FILTER_SCHEMA.md)** - JSON schema reference
-- **[python/DEVELOPER_GUIDE.md](python/DEVELOPER_GUIDE.md)** - Advanced guide
-- **[python/FILTER_ANALYSIS.md](python/FILTER_ANALYSIS.md)** - Pattern analysis
+- **[src/README.md](src/README.md)** - Complete library documentation
+- **[src/FILTER_SCHEMA.md](src/FILTER_SCHEMA.md)** - JSON schema reference
+- **[src/DEVELOPER_GUIDE.md](src/DEVELOPER_GUIDE.md)** - Advanced guide
+- **[src/FILTER_ANALYSIS.md](src/FILTER_ANALYSIS.md)** - Pattern analysis
 
 ---
 
@@ -91,17 +92,23 @@ That's it! See [`python/README.md`](python/README.md) for complete documentation
 This project separates **data** (vocabularies) from **logic** (transformation patterns):
 
 ```
-python/filter_factory.py ──► Universal filter builder (logic)
+src/filter_factory.py ──► Universal filter builder (logic)
         │
-        ├─► disco.json          (data)
-        ├─► pirate.json         (data)
-        ├─► club_kids_1980s.json (data)
-        └─► ... (add your own!)
+        ├─► disco.json          (pure data)
+        ├─► pirate.json         (pure data)
+        ├─► club_kids_1980s.json (pure data)
+        │
+        └─► For custom algorithms:
+            ├─► duck.json ──► duck.py
+            ├─► studly.json ──► studly.py
+            └─► glitch.json ──► glitch.py
 ```
 
-**Result**: ~70% of text filters can be created with **just JSON**, no code!
+**Two approaches**:
+- **~70% of filters**: Pure JSON (no coding!)
+- **~30% of filters**: Python modules for algorithms (clean separation)
 
-See [python/FILTER_ANALYSIS.md](python/FILTER_ANALYSIS.md) for the complete analysis.
+See [src/FILTER_ANALYSIS.md](src/FILTER_ANALYSIS.md) for the complete analysis.
 
 ---
 
@@ -147,8 +154,8 @@ This project inherits the licenses from the original filters package. Each filte
 
 Want to add a new filter?
 
-1. **For JSON filters**: Create a `.json` file in `/python` following the schema in [FILTER_SCHEMA.md](python/FILTER_SCHEMA.md)
-2. **For algorithmic filters**: Create a custom transformer in Python - see [DEVELOPER_GUIDE.md](python/DEVELOPER_GUIDE.md)
+1. **For JSON filters**: Create a `.json` file in `/python` following the schema in [FILTER_SCHEMA.md](src/FILTER_SCHEMA.md)
+2. **For algorithmic filters**: Create a custom transformer in Python - see [DEVELOPER_GUIDE.md](src/DEVELOPER_GUIDE.md)
 
 Most filters can be created with just JSON - no coding required!
 
@@ -173,10 +180,11 @@ This makes filters:
 
 ## 📊 Statistics
 
-- **15** Python filters available (11 JSON-based, 4 algorithmic)
+- **18** filters available (11 pure JSON, 7 with Python modules)
 - **~70%** of text transformations can be pure JSON (no code needed)
 - **10** transformation patterns identified and implemented
 - **100+** slang terms per subculture filter
+- **4** Python module patterns (duck, studly, lolcat, glitch)
 
 ---
 
