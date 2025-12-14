@@ -275,6 +275,52 @@ def character_translation(text: str, from_chars: str, to_chars: str) -> str:
 
 
 # ============================================================================
+# PATTERN 11: GLITCH TRANSFORMER (ALGORITHMIC)
+# ============================================================================
+
+class GlitchTransformer:
+    """
+    Replace characters with Unicode blocks/shapes based on probability.
+    Simulates computer glitch/corruption effects.
+
+    Example:
+        glitch = GlitchTransformer(percentage=50)
+        glitch.transform("Hello")  # "H▓l█o" or similar
+    """
+
+    # Unicode block/shape characters for glitch effect
+    GLITCH_CHARS = [
+        '█', '▓', '▒', '░', '▀', '▄', '▌', '▐', '■', '□',
+        '▪', '▫', '▬', '▭', '▮', '▯', '▰', '▱', '▲', '△',
+        '▴', '▵', '▶', '▷', '▸', '▹', '►', '▻', '▼', '▽',
+        '▾', '▿', '◀', '◁', '◂', '◃', '◄', '◅', '◆', '◇',
+        '◈', '◉', '◊', '○', '◌', '◍', '◎', '●', '◐', '◑',
+        '◒', '◓', '◔', '◕', '◖', '◗', '◘', '◙', '◚', '◛',
+    ]
+
+    def __init__(self, percentage: int = 100, seed: int = 42):
+        """
+        Args:
+            percentage: Percentage of letters to glitch (0-100)
+            seed: Random seed for reproducible results
+        """
+        self.percentage = percentage
+        import random
+        self.random = random.Random(seed)
+
+    def transform(self, text: str) -> str:
+        """Apply glitch effect to text."""
+        result = []
+        for char in text:
+            # Only glitch letters and numbers
+            if char.isalnum() and self.random.randint(1, 100) <= self.percentage:
+                result.append(self.random.choice(self.GLITCH_CHARS))
+            else:
+                result.append(char)
+        return ''.join(result)
+
+
+# ============================================================================
 # MAIN FILTER ENGINE
 # ============================================================================
 

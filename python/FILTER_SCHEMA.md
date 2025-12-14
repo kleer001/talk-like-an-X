@@ -213,6 +213,52 @@ Who created this filter.
 
 ---
 
+#### `glitch` (integer or object)
+
+**Purpose**: Apply a "computer glitch" effect by replacing characters with Unicode blocks/shapes.
+
+**Type**: Integer (percentage) or object with `percentage` and `seed` fields.
+
+**Use cases**: Corrupted text effects, glitch aesthetics, data corruption simulation.
+
+**Simple format** (just percentage):
+```json
+"glitch": 50
+```
+
+**Advanced format** (with custom seed for reproducibility):
+```json
+"glitch": {
+  "percentage": 25,
+  "seed": 12345
+}
+```
+
+**Examples**:
+
+```json
+{
+  "name": "Computer Glitch 50%",
+  "glitch": 50
+}
+```
+
+**Input**: "Hello world!"
+**Output**: "H▓l●■ w○r◅d!"
+
+**Percentage values**:
+- `100` = Full corruption (all letters/numbers replaced)
+- `50` = Half corrupted
+- `25` = Quarter corrupted
+- `10` = Lightly corrupted
+- `0` = No effect
+
+**Note**: The glitch transformer is applied **last** in the transformation pipeline, so it corrupts the final output after all other transformations.
+
+**Note**: Uses a seeded random number generator for reproducible results (same input always produces same output).
+
+---
+
 ### Global Settings
 
 #### `preserve_case` (boolean, default: true)

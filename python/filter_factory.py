@@ -28,7 +28,8 @@ from text_transformer import (
     CharacterSubstitution,
     SuffixReplacer,
     PrefixReplacer,
-    SentenceAugmenter
+    SentenceAugmenter,
+    GlitchTransformer
 )
 
 
@@ -67,6 +68,7 @@ class FilterFactory:
             - suffixes: Dict of suffix replacements
             - prefixes: Dict of prefix replacements
             - sentence_augmentation: List of punctuation augmentation rules
+            - glitch: Int (percentage) or dict with 'percentage' and 'seed'
             - prefix_text: Text to add before output
             - suffix_text: Text to add after output
         """
@@ -121,7 +123,19 @@ class FilterFactory:
                 )
             filter.add(augmenter)
 
-        # 6. Prefix/suffix text
+        # 6. Glitch effect (applied last to corrupt final output)
+        if 'glitch' in config:
+            glitch_config = config['glitch']
+            if isinstance(glitch_config, dict):
+                percentage = glitch_config.get('percentage', 100)
+                seed = glitch_config.get('seed', 42)
+            else:
+                # If glitch is just a number, treat it as percentage
+                percentage = int(glitch_config)
+                seed = 42
+            filter.add(GlitchTransformer(percentage=percentage, seed=seed))
+
+        # 7. Prefix/suffix text
         if 'prefix_text' in config:
             filter.set_prefix(config['prefix_text'])
         if 'suffix_text' in config:

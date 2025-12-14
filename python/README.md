@@ -38,6 +38,18 @@ Bork Bork Bork!"
 ./filter_factory.py fudd "Be very quiet. I'm hunting rabbits."
 # Output: "Be vewy quiet., uh-hah-hah-hah. I'm hunting wabbits."
 
+# 1980s Club Kids
+./filter_factory.py club_kids_1980s "Hello! This party is amazing!"
+# Output: "Yo! No doubt! This rave is phenomenal!"
+
+# 1950s Greasers
+./filter_factory.py greasers_1950s "Hello friend, this is really cool!"
+# Output: "Hey there cat, this is real hip!"
+
+# Computer Glitch (50% corruption)
+./filter_factory.py glitch-50 "Hello world!"
+# Output: "H▓l●■ w○r◅d!"
+
 # Note: .json extension is optional!
 ```
 
@@ -102,11 +114,24 @@ filter_factory.py ──► Universal filter builder (write once)
 - **DEVELOPER_GUIDE.md** - Advanced usage and custom transformers
 
 ### Example Filters (JSON Only!)
-- **disco.json** - 1970s disco slang
+
+**Accents & Characters:**
 - **pirate.json** - Pirate speak
 - **german.json** - German accent
 - **chef.json** - Swedish Chef (Bork Bork Bork!)
 - **fudd.json** - Elmer Fudd
+
+**Subcultures & Eras:**
+- **disco.json** - 1970s disco slang
+- **club_kids_1980s.json** - 1980s club/rave culture
+- **greasers_1950s.json** - 1950s greasers and hot rods
+- **punk_rockers_1970s.json** - 1970s punk rock scene
+
+**Special Effects:**
+- **glitch-100.json** - 100% corrupted (full Unicode blocks)
+- **glitch-50.json** - 50% corrupted text
+- **glitch-25.json** - 25% corrupted text
+- **glitch-10.json** - 10% lightly corrupted text
 
 ### Legacy (Deprecated)
 - ~~disco_filter.py~~ (replaced by disco.json + filter_factory.py)
