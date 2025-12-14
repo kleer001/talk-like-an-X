@@ -28,8 +28,8 @@ Transform normal English text in various fun ways - from pirate speak to compute
 - Smart word boundary detection and case preservation
 
 **🎨 15 Ready-to-Use Filters**
-- **Accents**: Pirate, German, Swedish Chef, Elmer Fudd
-- **Subcultures**: 1970s Disco, 1980s Club Kids, 1950s Greasers, 1970s Punks
+- **Accents**: Pirate, German, Swedish Chef, Elmer Fudd, Scottish, Brooklyn/NYC
+- **Subcultures**: 1970s Disco, 1980s Club Kids, 1950s Greasers, 1970s Punks, Hillbilly
 - **Effects**: Computer Glitches (10%, 25%, 50%, 100% corruption)
 
 **🔧 Extensible Design**
