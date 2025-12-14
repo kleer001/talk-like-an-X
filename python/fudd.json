@@ -1,0 +1,31 @@
+{
+  "name": "Elmer Fudd",
+  "description": "Be vewy vewy quiet, I'm hunting wabbits!",
+
+  "substitutions": {
+    "rabbit": "wabbit",
+    "Rabbit": "Wabbit"
+  },
+
+  "characters": {
+    "r": "w",
+    "R": "W",
+    "l": "w",
+    "L": "W"
+  },
+
+  "suffixes": {
+    "th": "f"
+  },
+
+  "sentence_augmentation": [
+    {
+      "punctuation": ".",
+      "additions": [", uh-hah-hah-hah."],
+      "frequency": 4
+    }
+  ],
+
+  "preserve_case": true,
+  "word_boundary": true
+}

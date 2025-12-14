@@ -1,0 +1,39 @@
+{
+  "name": "Swedish Chef",
+  "description": "Bork Bork Bork! Swedish Chef from The Muppets",
+
+  "substitutions": {
+    "the": "zee",
+    "The": "Zee",
+    "an": "un",
+    "An": "Un"
+  },
+
+  "characters": {
+    "v": "f",
+    "V": "F",
+    "w": "v",
+    "W": "V"
+  },
+
+  "suffixes": {
+    "tion": "shun",
+    "en": "ee"
+  },
+
+  "sentence_augmentation": [
+    {
+      "punctuation": ".",
+      "additions": ["\nBork Bork Bork!"],
+      "frequency": 1
+    },
+    {
+      "punctuation": "!",
+      "additions": ["\nBork Bork Bork!"],
+      "frequency": 1
+    }
+  ],
+
+  "preserve_case": true,
+  "word_boundary": false
+}

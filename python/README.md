@@ -17,17 +17,28 @@ python filter_factory.py disco.json "Hello friend!"
 ### Using Pre-Made Filters
 
 ```bash
-# Disco slang
-python filter_factory.py disco.json "Hello, how are you today?"
+# Disco slang (1970s)
+./filter_factory.py disco "Hello, how are you today?"
 # Output: "Hey baby, what's happenin' today?"
 
 # Pirate speak
-python filter_factory.py pirate.json "Hello my friend! Yes, I am happy."
+./filter_factory.py pirate "Hello my friend! Yes, I am happy."
 # Output: "Ahoy me matey!, arr! Aye, I be stoked."
 
 # German accent
-python filter_factory.py german.json "The weather is very warm."
+./filter_factory.py german "The weather is very warm."
 # Output: "Ze feader ist fery farm."
+
+# Swedish Chef
+./filter_factory.py chef "The weather is wonderful!"
+# Output: "Zee veazeer is vonderful!
+Bork Bork Bork!"
+
+# Elmer Fudd
+./filter_factory.py fudd "Be very quiet. I'm hunting rabbits."
+# Output: "Be vewy quiet., uh-hah-hah-hah. I'm hunting wabbits."
+
+# Note: .json extension is optional!
 ```
 
 ### Creating Your Own Filter
@@ -87,12 +98,15 @@ filter_factory.py ──► Universal filter builder (write once)
 ### Documentation
 - **FILTER_SCHEMA.md** - Complete JSON schema reference
 - **TRANSFORMATION_PATTERNS.md** - High-level pattern analysis
+- **FILTER_ANALYSIS.md** - Analysis of all 25 TypeScript filters
 - **DEVELOPER_GUIDE.md** - Advanced usage and custom transformers
 
 ### Example Filters (JSON Only!)
 - **disco.json** - 1970s disco slang
 - **pirate.json** - Pirate speak
 - **german.json** - German accent
+- **chef.json** - Swedish Chef (Bork Bork Bork!)
+- **fudd.json** - Elmer Fudd
 
 ### Legacy (Deprecated)
 - ~~disco_filter.py~~ (replaced by disco.json + filter_factory.py)
@@ -294,14 +308,22 @@ See **DEVELOPER_GUIDE.md** for advanced usage.
 ## Testing
 
 ```bash
-# Run all examples
-python filter_factory.py disco.json "Hello friend"
-python filter_factory.py pirate.json "Hello friend"
-python filter_factory.py german.json "Hello friend"
+# Run all example filters
+./filter_factory.py disco "Hello friend"
+./filter_factory.py pirate "Hello friend"
+./filter_factory.py german "Hello friend"
+./filter_factory.py chef "Hello friend"
+./filter_factory.py fudd "Hello friend"
 
 # Test the library directly
 python text_transformer.py
 ```
+
+## Coverage
+
+After analyzing all 25 TypeScript filters in `src/`, we found that **~70% can be fully implemented in JSON** with no custom Python code needed! See **FILTER_ANALYSIS.md** for details.
+
+The remaining 30% require algorithmic transformations (like letter scrambling, position-based alternation, etc.) that are filter-specific and should be implemented as custom Python classes - which is exactly the right design!
 
 ## Requirements
 

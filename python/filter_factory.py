@@ -11,7 +11,8 @@ Usage:
     result = filter.transform("Hello world")
 
 Or from command line:
-    python filter_factory.py my_filter.json "Hello world"
+    ./filter_factory.py disco "Hello world"
+    ./filter_factory.py disco.json "Hello world"  # .json is optional
 
 Author: Universal filter builder
 License: GPL
@@ -129,26 +130,68 @@ class FilterFactory:
         return filter
 
 
+def find_filter_file(filter_name: str) -> Path:
+    """
+    Find a filter JSON file by name.
+
+    Searches in:
+    1. Current directory
+    2. Same directory as this script
+    3. Accepts name with or without .json extension
+
+    Args:
+        filter_name: Filter name (e.g., 'disco' or 'disco.json')
+
+    Returns:
+        Path to the filter file
+
+    Raises:
+        FileNotFoundError: If filter file cannot be found
+    """
+    # Add .json extension if not present
+    if not filter_name.endswith('.json'):
+        filter_name = filter_name + '.json'
+
+    # Search locations
+    search_paths = [
+        Path.cwd() / filter_name,                    # Current directory
+        Path(__file__).parent / filter_name,         # Script directory
+    ]
+
+    for path in search_paths:
+        if path.exists():
+            return path
+
+    # Not found - provide helpful error
+    raise FileNotFoundError(
+        f"Filter '{filter_name}' not found. Searched:\n" +
+        "\n".join(f"  - {p}" for p in search_paths)
+    )
+
+
 def main():
     """Command-line interface for using any JSON filter."""
     if len(sys.argv) < 2:
-        print("Usage: python filter_factory.py FILTER.json [TEXT]")
+        print("Usage: ./filter_factory.py FILTER [TEXT]")
         print("\nExamples:")
-        print("  python filter_factory.py disco.json 'Hello friend'")
-        print("  echo 'Hello world' | python filter_factory.py disco.json")
-        print("  python filter_factory.py disco.json < input.txt")
+        print("  ./filter_factory.py disco 'Hello friend'")
+        print("  ./filter_factory.py pirate 'Hello friend'")
+        print("  echo 'Hello world' | ./filter_factory.py disco")
+        print("  ./filter_factory.py disco < input.txt")
+        print("\nNote: .json extension is optional")
         sys.exit(1)
 
-    json_file = sys.argv[1]
+    filter_name = sys.argv[1]
 
-    # Load the filter
+    # Find and load the filter
     try:
-        filter = FilterFactory.from_json(json_file)
-    except FileNotFoundError:
-        print(f"Error: Filter file '{json_file}' not found")
+        json_file = find_filter_file(filter_name)
+        filter = FilterFactory.from_json(str(json_file))
+    except FileNotFoundError as e:
+        print(f"Error: {e}")
         sys.exit(1)
     except json.JSONDecodeError as e:
-        print(f"Error: Invalid JSON in '{json_file}': {e}")
+        print(f"Error: Invalid JSON in '{filter_name}': {e}")
         sys.exit(1)
 
     # Get input text
