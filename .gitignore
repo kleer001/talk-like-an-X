@@ -7,3 +7,5 @@
 /index.js
 /index.d.ts
 __pycache__/
+*.pyc
+*.pyo
