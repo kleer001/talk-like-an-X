@@ -6,3 +6,4 @@
 /dist
 /index.js
 /index.d.ts
+__pycache__/
