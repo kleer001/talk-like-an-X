@@ -2,137 +2,310 @@
 
 A Python port of the text transformation patterns used in the TypeScript filters (NYC, Klaus, Newspeak).
 
-## Overview
+## 🎯 Key Innovation: Data-Driven Filters
 
-This library provides a clean, modular approach to creating text transformation filters following **SOLID**, **DRY**, and **YAGNI** principles.
+**No Python coding required!** Define filters entirely in JSON files.
 
-### Key Features
-
-- **10 Core Transformation Patterns** extracted from real filters
-- **Protocol-based architecture** (SOLID)
-- **Shared base classes** to eliminate duplication (DRY)
-- **Simple API** without over-engineering (YAGNI)
-- **Case preservation** built-in
-- **Word boundary detection** automatic
-- **Extensible** through the Transformer protocol
+```bash
+# Create a filter with just JSON - no Python class needed
+python filter_factory.py disco.json "Hello friend!"
+# Output: "Hey baby cat!"
+```
 
 ## Quick Start
 
-### Basic Example
-
-```python
-from text_transformer import TextFilter, Substitution
-
-# Create a filter
-filter = TextFilter()
-
-# Add transformations
-filter.add(Substitution({
-    "hello": "hey",
-    "going to": "gonna",  # Handles phrases too!
-    "the": "da"
-}))
-
-# Use it
-result = filter.transform("Hello! I'm going to the store.")
-# Output: "Hey! I'm gonna da store."
-```
-
-### Using the Disco Filter
+### Using Pre-Made Filters
 
 ```bash
-# Run the example
-python disco_filter.py "Hello friend, how are you doing?"
-# Output: "Hey baby cat, what's happening, baby!"
+# Disco slang
+python filter_factory.py disco.json "Hello, how are you today?"
+# Output: "Hey baby, what's happenin' today?"
 
-# Or pipe text
-echo "This party is great!" | python disco_filter.py
+# Pirate speak
+python filter_factory.py pirate.json "Hello my friend! Yes, I am happy."
+# Output: "Ahoy me matey!, arr! Aye, I be stoked."
+
+# German accent
+python filter_factory.py german.json "The weather is very warm."
+# Output: "Ze feader ist fery farm."
 ```
 
-## Files
+### Creating Your Own Filter
 
-- **text_transformer.py** - Main library with all transformation classes
-- **disco_filter.py** - Complete working example (1970s disco slang)
-- **disco_slang.json** - Example slang dictionary
-- **DEVELOPER_GUIDE.md** - Comprehensive guide for creating custom filters
+1. **Copy an example JSON file** (e.g., `disco.json`)
+2. **Edit the vocabulary** - no coding needed!
+3. **Test it**:
+   ```bash
+   python filter_factory.py my_filter.json "test text"
+   ```
+
+That's it! No Python class to write, no logic to duplicate.
 
 ## Architecture
 
-### SOLID Principles Applied
+### The Old Way (Duplicated Logic) ❌
 
-1. **Single Responsibility**: Each transformer handles one type of transformation
-2. **Open/Closed**: Extend via new Transformer implementations without modifying core
-3. **Liskov Substitution**: All transformers implement the Transformer protocol
-4. **Interface Segregation**: Simple `transform(text) -> text` protocol
-5. **Dependency Inversion**: TextFilter depends on Transformer protocol, not concrete classes
+```
+disco_filter.py   ─┐
+pirate_filter.py  ├─ All contain the same filter-building logic
+valley_filter.py  ┘
+```
 
-### DRY Principle
+### The New Way (DRY) ✅
 
-All regex-based transformers share a common `RegexTransformer` base class that handles:
-- Pattern compilation
-- Rule storage
-- Transformation application
+```
+filter_factory.py ──► Universal filter builder (write once)
+        │
+        ├─► disco.json    (just data)
+        ├─► pirate.json   (just data)
+        └─► valley.json   (just data)
+```
 
-### YAGNI Principle
+### Why This Is Better
 
-- Merged WordSubstitution and PhraseConsolidation (same pattern, different scale)
-- Removed unused features (random number generation, complex conditional logic)
-- Kept API minimal but sufficient
+**DRY (Don't Repeat Yourself)**:
+- Filter-building logic lives in ONE place (`filter_factory.py`)
+- Each filter is just data (JSON)
+- No duplicated Python code
 
-## Available Transformers
+**YAGNI (You Ain't Gonna Need It)**:
+- No custom Python class for each filter
+- No boilerplate code
+- JSON is simpler to edit than Python
 
-| Class | Purpose | Example |
-|-------|---------|---------|
-| `Substitution` | Replace words/phrases | "hello" → "hey" |
-| `CharacterSubstitution` | Replace characters | "th" → "d" |
-| `SuffixReplacer` | Change suffixes | "-ing" → "-in'" |
-| `PrefixReplacer` | Change prefixes | "un-" → "not-" |
-| `SentenceAugmenter` | Add at punctuation | "." → ". Right on!" |
-| `character_translation` | 1-to-1 char mapping | "a" → "@" |
+**Separation of Concerns**:
+- Data (vocabulary) separated from logic (transformation)
+- Non-programmers can create filters
+- Easier to maintain and version control
 
-## Creating Your Own Filter
+## Files
 
-See **DEVELOPER_GUIDE.md** for detailed instructions.
+### Core Library
+- **text_transformer.py** - Transformation classes (the engine)
+- **filter_factory.py** - Universal filter builder (reads JSON)
 
-Quick recipe:
+### Documentation
+- **FILTER_SCHEMA.md** - Complete JSON schema reference
+- **TRANSFORMATION_PATTERNS.md** - High-level pattern analysis
+- **DEVELOPER_GUIDE.md** - Advanced usage and custom transformers
 
-1. Create a JSON dictionary with your slang
-2. Build a filter class that loads the dictionary
-3. Add transformers in the right order:
-   - Phrases first (most specific)
-   - Words next
-   - Characters
-   - Suffixes
-   - Sentence augmentation last
+### Example Filters (JSON Only!)
+- **disco.json** - 1970s disco slang
+- **pirate.json** - Pirate speak
+- **german.json** - German accent
 
-## Pattern Analysis Summary
+### Legacy (Deprecated)
+- ~~disco_filter.py~~ (replaced by disco.json + filter_factory.py)
+- ~~disco_slang.json~~ (merged into disco.json)
 
-Based on analyzing nyc.ts, klaus.ts, and newspeak.ts, we identified these transformation patterns:
+## JSON Filter Format
 
-1. **Word Substitution** - Direct vocabulary changes
-2. **Character Substitution** - Accent/phonetic effects
-3. **Phrase Consolidation** - Multi-word contractions
-4. **Suffix/Prefix Morphology** - Systematic grammar rules
-5. **Compound Creation** - Merge words into compounds
-6. **Boundary Detection** - Context-aware matching
-7. **Case Preservation** - Maintain capitalization
-8. **Conditional Patterns** - Match-dependent replacement
-9. **Sentence Augmentation** - Punctuation modifications
-10. **Character Translation** - Character-by-character mapping
+Minimal example:
+
+```json
+{
+  "name": "My Filter",
+  "substitutions": {
+    "hello": "hey",
+    "goodbye": "later"
+  }
+}
+```
+
+Full-featured example:
+
+```json
+{
+  "name": "1970s Disco",
+  "substitutions": {
+    "hello": "hey baby",
+    "how are you": "what's happening",
+    "going to": "gonna"
+  },
+  "characters": {
+    "th": "d"
+  },
+  "suffixes": {
+    "ing": "in'"
+  },
+  "sentence_augmentation": [
+    {
+      "punctuation": ".",
+      "additions": [" dig?", " right on!"],
+      "frequency": 3
+    }
+  ]
+}
+```
+
+See **FILTER_SCHEMA.md** for complete documentation.
+
+## Available Transformation Types
+
+| Type | What It Does | Example |
+|------|--------------|---------|
+| `substitutions` | Replace words/phrases | "hello" → "hey" |
+| `characters` | Replace character pairs | "th" → "d" |
+| `suffixes` | Transform word endings | "ing" → "in'" |
+| `prefixes` | Transform word beginnings | "un" → "not" |
+| `sentence_augmentation` | Add at punctuation | "." → ". Right?" |
+
+## Usage from Python
+
+```python
+from filter_factory import FilterFactory
+
+# Load any JSON filter
+filter = FilterFactory.from_json('disco.json')
+
+# Transform text
+result = filter.transform("Hello friend, how are you?")
+print(result)
+# "Hey baby cat, what's happening?"
+```
+
+## Usage from Command Line
+
+```bash
+# Direct text
+python filter_factory.py disco.json "Hello world"
+
+# Pipe input
+echo "Hello world" | python filter_factory.py disco.json
+
+# File processing
+python filter_factory.py disco.json < input.txt > output.txt
+```
+
+## Design Principles
+
+### SOLID
+- **Single Responsibility**: Each transformer class has one job
+- **Open/Closed**: Extend via JSON, not code modification
+- **Liskov Substitution**: All transformers implement same protocol
+- **Interface Segregation**: Simple `transform()` interface
+- **Dependency Inversion**: FilterFactory depends on abstractions
+
+### DRY
+- Filter-building logic written once in `FilterFactory`
+- Shared `RegexTransformer` base class
+- No duplicated pattern compilation code
+
+### YAGNI
+- No custom classes per filter
+- No over-engineering
+- Simple JSON schema without unnecessary complexity
+
+## Pattern Analysis
+
+Based on analyzing nyc.ts, klaus.ts, and newspeak.ts, we identified **10 core transformation patterns**:
+
+1. Word/Phrase Substitution
+2. Character Pair Replacement
+3. Multi-Word Phrase Consolidation *(merged with #1)*
+4. Suffix/Prefix Morphology
+5. Compound Word Creation *(handled by substitutions)*
+6. Context-Aware Boundary Detection
+7. Case Preservation
+8. Conditional Pattern Matching
+9. Punctuation/Sentence Augmentation
+10. Character Translation
+
+The library implements all patterns while staying DRY and simple.
+
+## Creating Your Own Filter - Step by Step
+
+### 1. Start with a Template
+
+Copy an existing JSON file:
+```bash
+cp disco.json my_filter.json
+```
+
+### 2. Edit the Metadata
+
+```json
+{
+  "name": "My Awesome Filter",
+  "description": "What it does",
+  "author": "Your Name"
+}
+```
+
+### 3. Add Your Vocabulary
+
+```json
+{
+  "substitutions": {
+    "hello": "greetings",
+    "friend": "companion",
+    "going to": "shall"
+  }
+}
+```
+
+### 4. Add Other Transformations (Optional)
+
+```json
+{
+  "suffixes": {
+    "ing": "eth"
+  },
+  "sentence_augmentation": [
+    {
+      "punctuation": ".",
+      "additions": [" verily!", " forsooth!"],
+      "frequency": 2
+    }
+  ]
+}
+```
+
+### 5. Test It
+
+```bash
+python filter_factory.py my_filter.json "Hello friend, I am going to town."
+```
+
+### 6. Iterate and Refine
+
+Add more words, adjust settings, test edge cases.
+
+**No Python coding needed at any step!**
+
+## Advanced: Custom Transformers in Python
+
+If JSON isn't enough, you can still write custom Python transformers:
+
+```python
+from text_transformer import TextFilter, RegexTransformer
+
+class MyCustomTransformer(RegexTransformer):
+    def __init__(self):
+        super().__init__()
+        # Your custom logic here
+
+filter = TextFilter()
+filter.add(MyCustomTransformer())
+```
+
+See **DEVELOPER_GUIDE.md** for advanced usage.
 
 ## Testing
 
 ```bash
-# Run the built-in demo
-python text_transformer.py
+# Run all examples
+python filter_factory.py disco.json "Hello friend"
+python filter_factory.py pirate.json "Hello friend"
+python filter_factory.py german.json "Hello friend"
 
-# Test the disco filter
-python disco_filter.py
+# Test the library directly
+python text_transformer.py
 ```
 
 ## Requirements
 
-- Python 3.7+ (uses typing.Protocol)
+- Python 3.7+ (uses `typing.Protocol`)
 - No external dependencies
 
 ## License
@@ -141,9 +314,62 @@ GPL (matching the original TypeScript filters)
 
 ## Contributing
 
-To add your own filter to this collection:
+To add a new filter:
 
-1. Create `your_filter.py` based on `disco_filter.py`
-2. Create `your_slang.json` with your vocabulary
-3. Add tests and documentation
+1. Create `your_filter.json` following the schema
+2. Test it with `filter_factory.py`
+3. Add example output to this README
 4. Submit a pull request!
+
+**That's it!** No Python code to review, just JSON data.
+
+## Migration from Old System
+
+If you have an old-style filter class:
+
+**Before** (disco_filter.py - 80 lines):
+```python
+class DiscoFilter:
+    def __init__(self):
+        # Load JSON
+        # Build filter
+        # Configure transformers
+        # ... lots of boilerplate
+```
+
+**After** (disco.json - just data):
+```json
+{
+  "name": "1970s Disco",
+  "substitutions": { ... }
+}
+```
+
+**Usage**:
+```bash
+# Old way
+python disco_filter.py "Hello"
+
+# New way
+python filter_factory.py disco.json "Hello"
+```
+
+Same result, way less code!
+
+## Philosophy
+
+> **Most text transformations are data, not logic.**
+
+Instead of writing Python classes that do the same thing with different vocabularies, we separate:
+- **Logic**: Universal transformation patterns (written once)
+- **Data**: Vocabulary and settings (JSON files)
+
+This makes filters:
+- ✅ Easier to create (no coding)
+- ✅ Easier to maintain (edit data, not code)
+- ✅ Easier to share (JSON is universal)
+- ✅ Easier to version control (clean diffs)
+
+---
+
+**Happy filtering!** 🎉

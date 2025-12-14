@@ -1,0 +1,33 @@
+{
+  "name": "German Accent",
+  "description": "Adds a German accent to English text",
+
+  "substitutions": {
+    "the": "ze",
+    "with": "mitt",
+    "yes": "ja",
+    "Yes": "Jawohl",
+    "no": "nein",
+    "mr": "Herr",
+    "mrs": "Frau",
+    "miss": "Fraulein",
+    "of": "uff",
+    "my": "mein",
+    "and": "undt",
+    "one": "ein",
+    "is": "ist"
+  },
+
+  "characters": {
+    "th": "d",
+    "w": "v",
+    "v": "f"
+  },
+
+  "suffixes": {
+    "ing": "ingkt"
+  },
+
+  "preserve_case": true,
+  "word_boundary": true
+}

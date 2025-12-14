@@ -1,0 +1,74 @@
+{
+  "name": "Pirate Speak",
+  "description": "Talk like a pirate, matey!",
+
+  "substitutions": {
+    "hello": "ahoy",
+    "hi": "ahoy",
+    "hey": "ahoy",
+    "friend": "matey",
+    "friends": "crew",
+    "pal": "matey",
+    "yes": "aye",
+    "yeah": "aye",
+    "no": "nay",
+    "nope": "nay",
+    "my": "me",
+    "mine": "me",
+    "your": "yer",
+    "you": "ye",
+    "are": "be",
+    "is": "be",
+    "am": "be",
+    "the": "th'",
+    "of": "o'",
+    "for": "fer",
+    "to": "t'",
+    "man": "seadog",
+    "woman": "lass",
+    "boy": "lad",
+    "girl": "lass",
+    "children": "young'uns",
+    "kids": "young'uns",
+    "money": "doubloons",
+    "cash": "booty",
+    "treasure": "booty",
+    "alcohol": "grog",
+    "beer": "grog",
+    "wine": "grog",
+    "drunk": "three sheets to the wind",
+    "bathroom": "head",
+    "toilet": "head",
+    "kitchen": "galley",
+    "floor": "deck",
+    "wall": "bulkhead",
+    "left": "port",
+    "right": "starboard",
+    "front": "fore",
+    "back": "aft",
+    "rope": "line",
+    "flag": "colors",
+    "jail": "brig",
+    "prison": "brig",
+    "i am": "i be",
+    "you are": "ye be",
+    "we are": "we be",
+    "they are": "they be"
+  },
+
+  "sentence_augmentation": [
+    {
+      "punctuation": "!",
+      "additions": [", arr!", ", me hearty!", ", ye scallywag!", ", shiver me timbers!"],
+      "frequency": 2
+    },
+    {
+      "punctuation": ".",
+      "additions": [", savvy?", ", arr.", ", matey."],
+      "frequency": 4
+    }
+  ],
+
+  "preserve_case": true,
+  "word_boundary": true
+}

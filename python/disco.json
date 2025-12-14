@@ -1,5 +1,9 @@
 {
-  "words": {
+  "name": "1970s Disco Enthusiast",
+  "description": "Transforms text into far-out 1970s disco slang",
+  "author": "Demo filter",
+
+  "substitutions": {
     "hello": "hey baby",
     "hi": "hey baby",
     "goodbye": "catch you on the flip side",
@@ -11,7 +15,7 @@
     "good": "far out",
     "great": "outta sight",
     "excellent": "dy-no-mite",
-    "cool": "funky fresh",
+    "cool": "boss",
     "nice": "groovy",
     "bad": "jive",
     "terrible": "bummer",
@@ -50,7 +54,6 @@
     "crazy": "wild",
     "weird": "trippy",
     "strange": "far out",
-    "cool": "boss",
     "awesome": "outta sight",
     "amazing": "dy-no-mite",
     "beautiful": "foxy",
@@ -86,9 +89,7 @@
     "drink": "down",
     "relax": "chill",
     "calm": "mellow",
-    "fight": "rumble"
-  },
-  "phrases": {
+    "fight": "rumble",
     "how are you": "what's happening",
     "what's up": "what's happening",
     "i don't know": "beats me",
@@ -99,7 +100,6 @@
     "very good": "solid",
     "right now": "right on",
     "let's go": "let's split",
-    "come on": "come on",
     "going to": "gonna",
     "want to": "wanna",
     "have to": "gotta",
@@ -116,26 +116,26 @@
     "listen to": "dig",
     "talking about": "rappin' about",
     "hang out": "hang loose",
-    "hanging out": "hangin' loose"
-  },
-  "exclamations": {
+    "hanging out": "hangin' loose",
     "wow": "far out",
     "oh my god": "right on",
     "geez": "jive turkey",
     "damn": "man",
     "darn": "shoot"
   },
-  "affixes": {
-    "suffixes": {
-      "ing": "in'"
-    }
+
+  "suffixes": {
+    "ing": "in'"
   },
-  "sentence_fillers": [
-    " dig?",
-    " you dig?",
-    " baby!",
-    " right on!",
-    " can you dig it?",
-    " far out!"
-  ]
+
+  "sentence_augmentation": [
+    {
+      "punctuation": ".",
+      "additions": [" dig?", " you dig?", " baby!", " right on!", " can you dig it?", " far out!"],
+      "frequency": 3
+    }
+  ],
+
+  "preserve_case": true,
+  "word_boundary": true
 }
