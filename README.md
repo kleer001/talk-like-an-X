@@ -83,7 +83,6 @@ That's it! See [`python/README.md`](python/README.md) for complete documentation
 - **[python/FILTER_SCHEMA.md](python/FILTER_SCHEMA.md)** - JSON schema reference
 - **[python/DEVELOPER_GUIDE.md](python/DEVELOPER_GUIDE.md)** - Advanced guide
 - **[python/FILTER_ANALYSIS.md](python/FILTER_ANALYSIS.md)** - Pattern analysis
-- **[src/README.md](src/README.md)** - TypeScript filter development guide
 
 ---
 
@@ -108,23 +107,14 @@ See [python/FILTER_ANALYSIS.md](python/FILTER_ANALYSIS.md) for the complete anal
 
 ## 🎓 Credits & Attribution
 
-### Python Library
+This Python library is a complete redesign implementing a data-driven architecture inspired by the classic text transformation filters.
 
-The Python library in `/python` is a complete redesign implementing a data-driven architecture with:
-- Universal `FilterFactory` that builds filters from JSON
-- Protocol-based transformer system (SOLID principles)
-- Comprehensive slang dictionaries for subcultures
-- Analysis of transformation patterns across all original filters
+### Lineage
 
-### Original TypeScript Implementation
+This work builds upon a rich history of text transformation filters:
 
-This repository is forked from **[talk-like-a](https://github.com/agwells/talk-like-a)** by **Aaron Wells**, which is a JavaScript/TypeScript port of the classic **[debian `filters` package](https://packages.debian.org/jessie/games/filters)**.
-
-The original filters were written by many authors and collected by **[Joey Hess](http://joeyh.name/code/filters/)**, with code originally from:
-- `git://git.joeyh.name/filters`
-
-**Original Authors Include**:
-- Joey Hess (wrote several filters and collected the package)
+**Original Filters** (1980s-2000s): From the **[debian `filters` package](https://packages.debian.org/jessie/games/filters)** collected by **[Joey Hess](http://joeyh.name/code/filters/)**, with contributions from:
+- Joey Hess (package maintainer and filter author)
 - Daniel Klein (nyc, cockney filters, 1986)
 - John Sparks (klaus filter, 1989)
 - Jamie Zawinski (newspeak filter, 1991)
@@ -132,18 +122,13 @@ The original filters were written by many authors and collected by **[Joey Hess]
 - Andrew J. Buehler (scramble filter, 2009)
 - And many others (see `/original/debian/copyright` for full credits)
 
-**TypeScript Port**: Aaron Wells (2019)
-- Converted C/Perl filters to TypeScript
-- Created reproducible test framework
-- Made filters deterministic
+**JavaScript/TypeScript Port**: **[Aaron Wells](https://github.com/agwells/talk-like-a)** (2019) modernized these classic filters
 
-### This Fork
-
-**Python Implementation & Analysis**: Claude (Anthropic), 2024
-- Created data-driven Python library
-- Analyzed all 25 TypeScript filters for patterns
+**Python Implementation**: Claude (Anthropic), 2024
+- Created data-driven architecture separating vocabularies from logic
+- Analyzed transformation patterns and created reusable library
 - Designed JSON schema for filter configuration
-- Created subculture slang dictionaries
+- Created subculture slang dictionaries (100+ terms each)
 - Added glitch effect transformers
 
 **With Direction From**: kleer001 (repository owner)
@@ -162,11 +147,10 @@ This project inherits the licenses from the original filters package. Each filte
 
 Want to add a new filter?
 
-1. **For JSON filters**: Create a `.json` file in `/python` following the schema
-2. **For algorithmic filters**: Create a custom transformer in Python
-3. **For TypeScript filters**: Add to `/src` and update the API
+1. **For JSON filters**: Create a `.json` file in `/python` following the schema in [FILTER_SCHEMA.md](python/FILTER_SCHEMA.md)
+2. **For algorithmic filters**: Create a custom transformer in Python - see [DEVELOPER_GUIDE.md](python/DEVELOPER_GUIDE.md)
 
-See [python/DEVELOPER_GUIDE.md](python/DEVELOPER_GUIDE.md) and [src/README.md](src/README.md) for details.
+Most filters can be created with just JSON - no coding required!
 
 ---
 
@@ -189,9 +173,8 @@ This makes filters:
 
 ## 📊 Statistics
 
-- **25** original TypeScript filters analyzed
 - **15** Python filters available (11 JSON-based, 4 algorithmic)
-- **~70%** of filters can be pure JSON (no code needed)
+- **~70%** of text transformations can be pure JSON (no code needed)
 - **10** transformation patterns identified and implemented
 - **100+** slang terms per subculture filter
 
@@ -199,7 +182,5 @@ This makes filters:
 
 **Happy filtering!** 🎉
 
-**Original Filters**: Joey Hess, Daniel Klein, Jamie Zawinski, and many others
-**TypeScript Port**: Aaron Wells
-**Python Library**: Claude (Anthropic) with kleer001
-**License**: GPL (matching original filters)
+**Standing on the shoulders of giants:**
+Joey Hess, Daniel Klein, Jamie Zawinski, Aaron Wells, and many others

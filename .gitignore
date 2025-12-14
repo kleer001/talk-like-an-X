@@ -1,11 +1,4 @@
-/node_modules/
 /.vscode/
-/jsconfig.json
-/.envrc
-/build
-/dist
-/index.js
-/index.d.ts
 __pycache__/
 *.pyc
 *.pyo
