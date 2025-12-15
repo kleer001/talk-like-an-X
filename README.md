@@ -27,9 +27,9 @@ Transform normal English text in various fun ways - from pirate speak to compute
 - Extensive slang dictionaries (100+ terms per filter)
 - Smart word boundary detection and case preservation
 
-**🎨 18 Ready-to-Use Filters**
-- **Accents**: Pirate, German, Swedish Chef, Elmer Fudd, Scottish, Brooklyn/NYC
-- **Subcultures**: 1970s Disco, 1980s Club Kids, 1950s Greasers, 1970s Punks, Hillbilly
+**🎨 40+ Ready-to-Use Filters**
+- **Accents**: Pirate, German, Swedish Chef, Elmer Fudd, Scottish, NYC
+- **Subcultures**: 1920s Flappers, 1940s Zoot Suiters, 1950s Beatniks, 1950s Greasers, 1950s IBM Engineers, 1950s Teddy Boys, 1960s Hippies, 1960s Mid-Century Modern, 1960s Mods, 1960s Outlaw Bikers, 1960s Skinheads, 1960s Surfers, 1970s Disco, 1970s Metalheads, 1970s Punks, 1970s Rastafarians, 1980s Club Kids, 1980s Goths, 1980s Hip Hop Breakers, 1980s New Romantic Goths, 1980s Ravers, 1980s Yuppies, 1990s Grunge Musicians, 1990s Hackers, 1990s Riot Grrrl, 1990s Slackers
 - **Effects**: Computer Glitches (10%, 25%, 50%, 100%), Duck, Studly Caps, LOLCAT
 
 **🔧 Extensible Design**
@@ -127,7 +127,7 @@ This work builds upon a rich history of text transformation filters:
 - Jamie Zawinski (newspeak filter, 1991)
 - Nick Phillips (studly filter)
 - Andrew J. Buehler (scramble filter, 2009)
-- And many others (see `/original/debian/copyright` for full credits)
+- And many others from the original Debian filters package
 
 **JavaScript/TypeScript Port**: **[Aaron Wells](https://github.com/agwells/talk-like-a)** (2019) modernized these classic filters
 
@@ -144,9 +144,9 @@ This work builds upon a rich history of text transformation filters:
 
 ## 📜 License
 
-This project inherits the licenses from the original filters package. Each filter has its own license (GPL-2+, GPL-3+, MIT-like, or public domain). See **[original/debian/copyright](original/debian/copyright)** for complete license information.
+This project inherits the licenses from the original filters package. Each filter has its own license (GPL-2+, GPL-3+, MIT-like, or public domain).
 
-**Python library code** (in `/python`) is licensed under **GPL** to match the original filters.
+**Python library code** (in `/src`) is licensed under **GPL** to match the original filters.
 
 ---
 
@@ -154,7 +154,7 @@ This project inherits the licenses from the original filters package. Each filte
 
 Want to add a new filter?
 
-1. **For JSON filters**: Create a `.json` file in `/python` following the schema in [FILTER_SCHEMA.md](src/FILTER_SCHEMA.md)
+1. **For JSON filters**: Create a `.json` file in `/src` following the schema in [FILTER_SCHEMA.md](src/FILTER_SCHEMA.md)
 2. **For algorithmic filters**: Create a custom transformer in Python - see [DEVELOPER_GUIDE.md](src/DEVELOPER_GUIDE.md)
 
 Most filters can be created with just JSON - no coding required!
@@ -180,7 +180,7 @@ This makes filters:
 
 ## 📊 Statistics
 
-- **18** filters available (11 pure JSON, 7 with Python modules)
+- **40+** filters available (covering 20th-century subcultures and effects)
 - **~70%** of text transformations can be pure JSON (no code needed)
 - **10** transformation patterns identified and implemented
 - **100+** slang terms per subculture filter
