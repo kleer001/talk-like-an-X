@@ -1,0 +1,9 @@
+{
+  "name": "Duck Filter",
+  "description": "Replaces all words with variations of quack based on word length",
+  "author": "Aaron Wells (2023)",
+  "license": "Public domain",
+
+  "type": "python",
+  "module": "duck"
+}

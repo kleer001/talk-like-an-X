@@ -1,0 +1,12 @@
+{
+  "name": "Studly Caps",
+  "description": "Randomly capitalizes letters for StUdLy CaPs effect",
+  "author": "Nick Phillips",
+  "license": "GPL-2+",
+
+  "type": "python",
+  "module": "studly",
+  "params": {
+    "seed": 42
+  }
+}

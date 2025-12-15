@@ -1,0 +1,64 @@
+{
+  "name": "Brooklyn/NYC",
+  "description": "Transform plain English into Brooklyn English",
+  "author": "Daniel Klein (1986)",
+  "license": "GPL",
+  "substitutions": {
+    "other": "udder",
+    "nothing": "nuttin'",
+    "that": "dat",
+    "i'm going to": "i'manna",
+    "going to": "gonna",
+    "want to": "wanna",
+    "did you": "d'ja",
+    "you": "yuh",
+    "how are you": "howahrya",
+    "with": "wit'",
+    "don't": "doan",
+    "isn't": "ain't",
+    "word": "woid",
+    "heard": "hoid",
+    "stupid": "stoopid",
+    "under": "unner",
+    "actual": "ackshul"
+  },
+  "character_substitutions": {
+    "thin": "tin",
+    "thir": "toi",
+    "the": "de",
+    "ther": "der",
+    "tion": "shun",
+    "alk": "awk",
+    "ause": "awze",
+    "off": "awhf",
+    "our": "awh",
+    "or": "awh"
+  },
+  "suffixes": {
+    "er": "uh",
+    "ing": "in'"
+  },
+  "sentence_augmentation": [
+    {
+      "punctuation": ".",
+      "additions": [
+        " Okay?",
+        " Right?",
+        " Yuh got me so fahr?",
+        " Ya' dig?",
+        " Yuh with me?"
+      ],
+      "frequency": 4
+    },
+    {
+      "punctuation": "?",
+      "additions": [", or what?"],
+      "frequency": 1
+    },
+    {
+      "punctuation": "!",
+      "additions": [" Okay?"],
+      "frequency": 1
+    }
+  ]
+}

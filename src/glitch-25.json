@@ -1,0 +1,11 @@
+{
+  "name": "Computer Glitch 25%",
+  "description": "Quarter-corrupted text with Unicode blocks",
+
+  "type": "python",
+  "module": "glitch",
+  "params": {
+    "percentage": 25,
+    "seed": 42
+  }
+}

@@ -1,345 +1,194 @@
-# talk-like-a
+# talk-like-an-X
 
-Transform normal English text in various funny ways.
-([Demo](https://agwells.github.io/talk-like-a/))
+**A Python library for creating fun text transformation filters**
 
-## Table of Contents
+Transform normal English text in various fun ways - from pirate speak to computer glitches, from 1950s greasers to 1970s punks. Create custom filters with just JSON, no coding required!
 
-- [Installation](#installation)
-- [Credits](#credits)
-- [Development](#development)
-- [API](#api)
-  - [`b1ff`](#b1ff)
-  - [`censor`](#censor)
-  - [`chef`](#chef)
-  - [`cockney`](#cockney)
-  - [`eleet`](#eleet)
-  - [`fudd`](#fudd)
-  - [`jethro`](#jethro)
-  - [`jibberish`](#jibberish)
-  - [`ken`](#ken)
-  - [`kenny`](#kenny)
-  - [`klaus`](#klaus)
-  - [`ky00te`](#ky00te)
-  - [`LOLCAT`](#lolcat)
-  - [`nethackify`](#nethackify)
-  - [`newspeak`](#newspeak)
-  - [`nyc`](#nyc)
-  - [`pirate`](#pirate)
-  - [`rasterman`](#rasterman)
-  - [`scottish`](#scottish)
-  - [`scramble`](#scramble)
-  - [`spammer`](#spammer)
-  - [`studly`](#studly)
-  - [`uniencode`](#uniencode)
-  - [`upsidedown`](#upsidedown)
+```bash
+# Pirate speak
+./src/filter_factory.py pirate "Hello friend, how are you?"
+# "Ahoy matey, how be ye?"
 
-# Installation
+# Computer glitch effect
+./src/filter_factory.py glitch-50 "System malfunction!"
+# "S◆s◓●m ▓◅lf◂n◓◀i◍n!"
 
-```sh
-npm install talk-like-a
+# 1970s disco slang
+./src/filter_factory.py disco "This party is great!"
+# "This boogie is outta sight!"
 ```
 
-# API
+---
 
-This package exports a number of functions, each of which take a single string
-as their input, and return a transformed version of the same string as their
-output. All of these functions are deterministic; for the same input they will
-always produce the same output.
+## ✨ Features
 
-### b1ff()
+**🎯 Data-Driven Architecture**
+- Create filters entirely in JSON - no Python coding needed!
+- Extensive slang dictionaries (100+ terms per filter)
+- Smart word boundary detection and case preservation
 
-Talk like a [Usenet newbie](https://en.wikipedia.org/wiki/BIFF).
+**🎨 18 Ready-to-Use Filters**
+- **Accents**: Pirate, German, Swedish Chef, Elmer Fudd, Scottish, Brooklyn/NYC
+- **Subcultures**: 1970s Disco, 1980s Club Kids, 1950s Greasers, 1970s Punks, Hillbilly
+- **Effects**: Computer Glitches (10%, 25%, 50%, 100%), Duck, Studly Caps, LOLCAT
 
-```js
-const { b1ff } = require('talk-like-a');
-console.log(b1ff('Hello! How are you today?'));
-// HELO!!! HOW ARE U 2DAY???!
+**🔧 Extensible Design**
+- SOLID architecture with reusable transformers
+- Custom algorithmic filters as Python modules
+- Clean separation: JSON for data, Python for algorithms
+- Mix and match transformation patterns
+
+---
+
+## 🚀 Quick Start
+
+### Using Pre-Made Filters
+
+```bash
+cd src
+
+# Pirate speak
+./filter_factory.py pirate "Hello my friend! Yes, I am happy."
+# Output: "Ahoy me matey!, arr! Aye, I be stoked."
+
+# 1980s club kids
+./filter_factory.py club_kids_1980s "This party is amazing!"
+# Output: "This rave is phenomenal! No doubt!"
+
+# Computer glitch (50% corruption)
+./filter_factory.py glitch-50 "Error: System malfunction!"
+# Output: "E▓◅or: S◆◓◀●▓ ▓◅l◂◂n◓◀i◍n!"
 ```
 
-### censor()
+### Creating Your Own Filter
 
-CENSORED like a CENSORED.
+1. **Copy an example JSON file**:
+   ```bash
+   cp src/disco.json src/my_filter.json
+   ```
 
-```js
-const { censor } = require('talk-like-a');
-console.log(censor(dirtyTalk));
-// Hello, CENSOREDhead! How the CENSORED are you today?
+2. **Edit the vocabulary** - no coding needed!
+
+3. **Test it**:
+   ```bash
+   ./src/filter_factory.py my_filter "test text"
+   ```
+
+That's it! See [`src/README.md`](src/README.md) for complete documentation.
+
+---
+
+## 📚 Documentation
+
+- **[src/README.md](src/README.md)** - Complete library documentation
+- **[src/FILTER_SCHEMA.md](src/FILTER_SCHEMA.md)** - JSON schema reference
+- **[src/DEVELOPER_GUIDE.md](src/DEVELOPER_GUIDE.md)** - Advanced guide
+- **[src/FILTER_ANALYSIS.md](src/FILTER_ANALYSIS.md)** - Pattern analysis
+
+---
+
+## 🏗️ Architecture
+
+This project separates **data** (vocabularies) from **logic** (transformation patterns):
+
+```
+src/filter_factory.py ──► Universal filter builder (logic)
+        │
+        ├─► disco.json          (pure data)
+        ├─► pirate.json         (pure data)
+        ├─► club_kids_1980s.json (pure data)
+        │
+        └─► For custom algorithms:
+            ├─► duck.json ──► duck.py
+            ├─► studly.json ──► studly.py
+            └─► glitch.json ──► glitch.py
 ```
 
-### chef()
+**Two approaches**:
+- **~70% of filters**: Pure JSON (no coding!)
+- **~30% of filters**: Python modules for algorithms (clean separation)
 
-Talk like the Swedish Chef.
+See [src/FILTER_ANALYSIS.md](src/FILTER_ANALYSIS.md) for the complete analysis.
 
-```js
-const { chef } = require('talk-like-a');
-console.log(chef('Hello! How are you today?'));
-// Hellu! Hoo ere-a yuoo tudey?
-// Bork Bork Bork!
-```
+---
 
-### cockney()
+## 🎓 Credits & Attribution
 
-Talk in a bad Cockney accent.
+This Python library is a complete redesign implementing a data-driven architecture inspired by the classic text transformation filters.
 
-```js
-const { cockney } = require('talk-like-a');
-console.log(cockney('Hello! How are you today?'));
-// 'Ullo! 'ow are y'today, roit?'
-```
+### Lineage
 
-### eleet()
+This work builds upon a rich history of text transformation filters:
 
-Talk like a k3wl hacker.
+**Original Filters** (1980s-2000s): From the **[debian `filters` package](https://packages.debian.org/jessie/games/filters)** collected by **[Joey Hess](http://joeyh.name/code/filters/)**, with contributions from:
+- Joey Hess (package maintainer and filter author)
+- Daniel Klein (nyc, cockney filters, 1986)
+- John Sparks (klaus filter, 1989)
+- Jamie Zawinski (newspeak filter, 1991)
+- Nick Phillips (studly filter)
+- Andrew J. Buehler (scramble filter, 2009)
+- And many others (see `/original/debian/copyright` for full credits)
 
-```js
-const { eleet } = require('talk-like-a');
-console.log(eleet('Hello! How are you today?'));
-// H3ll0! H0w 4r3 y0u t0d4y?
-```
+**JavaScript/TypeScript Port**: **[Aaron Wells](https://github.com/agwells/talk-like-a)** (2019) modernized these classic filters
 
-### fudd()
+**Python Implementation**: Claude (Anthropic), 2024
+- Created data-driven architecture separating vocabularies from logic
+- Analyzed transformation patterns and created reusable library
+- Designed JSON schema for filter configuration
+- Created subculture slang dictionaries (100+ terms each)
+- Added glitch effect transformers
 
-Talk like Elmer Fudd.
+**With Direction From**: kleer001 (repository owner)
 
-```js
-const { fudd } = require('talk-like-a');
-console.log(fudd('Hello! How are you today?'));
-// Hewwo! How awe you today?
-```
+---
 
-### jethro()
+## 📜 License
 
-Talk in a bad hillbilly accent.
+This project inherits the licenses from the original filters package. Each filter has its own license (GPL-2+, GPL-3+, MIT-like, or public domain). See **[original/debian/copyright](original/debian/copyright)** for complete license information.
 
-```js
-const { jethro } = require('talk-like-a');
-console.log(jethro('Hello! How are you today?'));
-// Howdy. Ye DAWGies!!! How is y'all today?
-```
+**Python library code** (in `/python`) is licensed under **GPL** to match the original filters.
 
-### jibberish()
+---
 
-Runs text through a random selection of the rest of the filters, to make really
-weird output.
+## 🤝 Contributing
 
-```js
-const { jibberish } = require('talk-like-a');
-console.log(jibberish('Hello! How are you today?'));
-// %%%faanj ''hap  ooja ^oo, iiin7!, :w >|)aqpaaj ooj ooj f7oosaj aaz z! Struth! oo7aq
-// i>|joq >|joq >|joq
-// `joojjjoo e-oraaf  e aaz zaayf
-// ---`e-ajnwaj pjn^ aaz f)afqoos aaz u, cor blimey! fn + '7daj z7aaor e-asaaz wnjj qaaaj)sqooswuoo2\n\n
-```
+Want to add a new filter?
 
-### ken()
+1. **For JSON filters**: Create a `.json` file in `/python` following the schema in [FILTER_SCHEMA.md](src/FILTER_SCHEMA.md)
+2. **For algorithmic filters**: Create a custom transformer in Python - see [DEVELOPER_GUIDE.md](src/DEVELOPER_GUIDE.md)
 
-Talk in a bad Cockney accent, featuring (dubious) rhyming
-slang for a lot of computer terminology.
+Most filters can be created with just JSON - no coding required!
 
-```js
-const { ken } = require('talk-like-a');
-console.log(ken('Hello! How are you today?'));
-// Hello! Struth! How are yer today?
-```
+---
 
-### kenny()
+## 🎯 Design Philosophy
 
-Talk like Kenny on South Park.
+> **Most text transformations are data, not logic.**
 
-```js
-const { kenny } = require('talk-like-a');
-console.log(kenny('Hello! How are you today?'));
-// Mfpmpppmfpmfppf! Mfpppffpp mmmpffmpp ffmppffmf fmpppfmpmmmmffm?
-```
+Instead of writing code for each filter, we separate:
+- **Data** (vocabularies, slang) → JSON files
+- **Logic** (transformation patterns) → Reusable Python library
+- **Algorithms** (special cases) → Custom transformers when needed
 
-### klaus()
+This makes filters:
+- ✅ Easy to create (no coding for most filters)
+- ✅ Easy to maintain (edit data, not code)
+- ✅ Easy to share (JSON is universal)
+- ✅ Easy to version control (clean diffs)
 
-Talk in a bad German accent.
+---
 
-```js
-const { klaus } = require('talk-like-a');
-console.log(klaus('What are you up to today? I have nothing going on.'));
-// Vhat are you up to today? I hafe nodingkt goingkt on.
-```
+## 📊 Statistics
 
-### ky00te()
+- **18** filters available (11 pure JSON, 7 with Python modules)
+- **~70%** of text transformations can be pure JSON (no code needed)
+- **10** transformation patterns identified and implemented
+- **100+** slang terms per subculture filter
+- **4** Python module patterns (duck, studly, lolcat, glitch)
 
-Talk like an obnoxious catperson.
+---
 
-```js
-const { ky00te } = require('talk-like-a');
-console.log(ky00te('What are you up to today? I have nothing going on.'));
-// Whattarre ya up ta today? Y have na'hyng goyng on.
-```
+**Happy filtering!** 🎉
 
-### LOLCAT()
-
-Talk like a mid-2000s image macro.
-
-```js
-const { LOLCAT } = require('talk-like-a');
-console.log(LOLCAT('Hello! How are you today?'));
-// WHAT ARE YOU UP 2 TODAI? I HAS NOTHIN GOIN ON.
-```
-
-### nethackify()
-
-Talk like a wiped out text in nethack.
-
-```js
-const { nethackify } = require('talk-like-a');
-console.log(nethackify('Hello! How are you today?'));
-// Hello! Hcw  ?e ycu tocay?'
-```
-
-### newspeak()
-
-Talk like it's 1984.
-
-```js
-const { newspeak } = require('talk-like-a');
-console.log(
-  newspeak("Hello sir! It isn't sunny today. It's rather dark outside.")
-);
-// Hello citizen! It is unsunny today? It's plusunlight outside.
-// Hail Big Brother!
-```
-
-### nyc()
-
-Talk in a bad New York accent.
-
-```js
-const { nyc } = require('talk-like-a');
-console.log(nyc('Hello! How are you today?'));
-// Hello! Okay? Howahrya today, or what?
-```
-
-### pirate()
-
-Talk like a pirate.
-
-```js
-const { pirate } = require('talk-like-a');
-console.log(pirate('What are you up to today? I have nothing going on.'));
-// What be ye up t' today? I have nothin' goin' on, avast.
-```
-
-### rasterman()
-
-Talk like a busy open-source software developer.
-
-```js
-const { rasterman } = require('talk-like-a');
-console.log(rasterman('Hello! How are you today?'));
-// hello! how aer u today?
-```
-
-### scottish()
-
-Talk in a bad Scottish accent.
-
-```js
-const { scottish } = require('talk-like-a');
-console.log(scottish('What are you up to today? I have nothing going on.'));
-// What be ye up ta today? I haf nuthin' goin' on.
-```
-
-### scramble()
-
-Scramble the "inner" letters of each word in the input into a random order.
-The resulting text is still strangely readable.
-
-```js
-const { scramble } = require('talk-like-a');
-console.log(scramble('What are you up to today? I have nothing going on.'));
-// Waht are you up to toady? I hvae nonihtg gonig on
-```
-
-### spammer()
-
-Talk like a spambot!
-
-```js
-const { spammer } = require('talk-like-a');
-console.log(spammer('Hello! How are you today?'));
-// BELOW IS THE RESULT OF YOUR FEEDBACK FORM: HELLO! HOW ARE YOU TODAY?
-// This is a 1 time offer.
-// ---
-// To unsubscribe from these mails reply and put in the subject the word REMOVE.
-//
-//
-```
-
-### studly()
-
-Studly caps.
-
-```js
-const { studly } = require('talk-like-a');
-console.log(studly('What are you up to today? I have nothing going on.'));
-// WhAt aRe yOu uP to todAy? i haVe nOthiNg gOing on.
-```
-
-### uniencode()
-
-Replace ASCII with nearly-identical Unicode characters.
-
-```js
-const { uniencode } = require('talk-like-a');
-console.log(uniencode('Hello! How are you today?'));
-// Неⅼⅼօ! Нօw аrе уօυ tօⅾау?
-```
-
-### upsidedown()
-
-Flips text upside down (using only ASCII characters, so you kind of have to
-squint to see it).
-
-```js
-const { upsidedown } = require('talk-like-a');
-console.log(upsidedown('Hello! How are you today?'));
-// %hepof noh aje moy io77ay
-```
-
-# Credits
-
-This is a JavaScript port of the
-[debian `filters` package](https://packages.debian.org/jessie/games/filters),
-which is a collection of command-line jokey text transformation scripts. For
-example, the "pirate" command transforms text to sound like a pirate, and the
-"eleet" command transforms text so that it looks like it was written
-in classic 90s 1337-speak.
-
-The text transformation algorithms used here are based on code cloned from
-this Git repo: `git://git.joeyh.name/filters`
-
-The filters were written by several different authors, and collected by
-[Joey Hess](http://joeyh.name/code/filters/) (who also wrote several of them!).
-See the `/originals` directory for copyright and license information on each of
-them.
-
-# Development
-
-The initial aim of this project was to exactly replicate the behavior of each
-of the original CLI tools, in JavaScript. This turned out to not be exactly
-possible, because many of the original tools used random number generators
-which would be difficult to replicate in JS.
-
-So, for testing purposes, I wound up writing modified versions of most of the
-original scripts, replacing the random number generation with a simpler
-pseudo-random number generator easily replicable in multiple programming
-languages. I also cleaned up some bugs and made other changes to make their
-behavior more reproducible.
-
-The code for the modified versions of the debian CLI scripts, is in the Git
-repo's `/original` directory. These have been used to generate sample texts,
-which are stored in the `/tests` directory and can be used to test whether the
-JS scripts produce identical output by running `npm run test:original`. To
-update the generated sample texts, you will need to compile the CLI scripts
-from source code. Running `npm run compile-and-make-test-data` will accomplish
-this, but you will first have to install various CLI dependencies. See
-`original/README` for more information.
-
-Running `npm run test` will run a different set of tests that use Jest snapshots.
+**Standing on the shoulders of giants:**
+Joey Hess, Daniel Klein, Jamie Zawinski, Aaron Wells, and many others

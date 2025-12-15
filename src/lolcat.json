@@ -1,0 +1,11 @@
+{
+  "name": "LOLCAT",
+  "description": "I CAN HAZ CHEEZEBURGER - internet cat speak with random caps",
+  "license": "GPL-2+",
+
+  "type": "python",
+  "module": "lolcat",
+  "params": {
+    "seed": 42
+  }
+}
