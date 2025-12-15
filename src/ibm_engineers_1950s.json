@@ -166,7 +166,13 @@
     "sort of": "rather",
     "a lot": "considerably",
     "very much": "greatly",
-    "you know": "as you are aware"
+    "you know": "as you are aware",
+    "electronic computer": "electronic brain",
+    "programmer": "coder",
+    "algorithm": "procedure",
+    "debug": "troubleshoot",
+    "input": "feed in",
+    "output": "readout"
   },
   "sentence_augmentation": [
     {

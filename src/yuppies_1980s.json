@@ -146,7 +146,15 @@
     "sort of": "rather",
     "a lot": "considerably",
     "very much": "greatly",
-    "you know": "as you know"
+    "you know": "as you know",
+    "mercedes benz": "Benz",
+    "cellular phone": "brick phone",
+    "pager": "beeper",
+    "stock market": "the market",
+    "wall street": "The Street",
+    "networking": "schmoozing",
+    "status symbol": "trophy",
+    "cocaine": "nose candy"
   },
   "sentence_augmentation": [
     {

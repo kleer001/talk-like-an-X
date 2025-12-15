@@ -147,7 +147,26 @@
     "kind of": "kinda",
     "sort of": "sorta",
     "a lot": "a whole lot",
-    "very much": "really"
+    "very much": "really",
+    "policeman": "pig",
+    "establishment person": "straight",
+    "inauthentic": "plastic",
+    "experience": "trip",
+    "impressive": "heavy",
+    "smoke marijuana": "blow grass",
+    "hallucinogenic": "mind-bending",
+    "confuse": "blow my mind",
+    "excellent music": "outta sight",
+    "party hard": "get down",
+    "improvise music": "jam",
+    "understand deeply": "grok",
+    "political activist": "activist",
+    "demonstration": "be-in",
+    "communal living": "crash pad",
+    "boyfriend": "old man",
+    "girlfriend": "old lady",
+    "enthusiastic": "turned on",
+    "depressing": "bring down"
   },
   "sentence_augmentation": [
     {

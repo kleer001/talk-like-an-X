@@ -88,7 +88,12 @@
     "kind of": "kinda",
     "sort of": "sorta",
     "very much": "way",
-    "you know": "y'know"
+    "you know": "y'know",
+    "apathy": "whatever",
+    "alternative": "indie",
+    "corporate": "the man",
+    "generation x": "Gen X",
+    "unemployment": "funemployment"
   },
   "sentence_augmentation": [
     {

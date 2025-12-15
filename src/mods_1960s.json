@@ -145,7 +145,13 @@
     "sort of": "sorta",
     "a lot": "loads",
     "very much": "proper",
-    "you know": "innit"
+    "you know": "innit",
+    "scooter rider": "scooterist",
+    "vespa": "Vespa",
+    "lambretta": "Lambretta",
+    "parka jacket": "parka",
+    "all night party": "all-nighter",
+    "beach fight": "bank holiday riot"
   },
   "suffixes": {
     "ing": "in'"

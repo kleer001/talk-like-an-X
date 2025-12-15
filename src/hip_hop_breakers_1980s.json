@@ -173,7 +173,20 @@
     "sort of": "sorta",
     "a lot": "mad",
     "very much": "crazy",
-    "you know": "know what I'm sayin'"
+    "you know": "know what I'm sayin'",
+    "steal moves": "bite",
+    "dance battle": "throwdown",
+    "challenge": "call out",
+    "impressive move": "sick move",
+    "spin on head": "headspin",
+    "freeze move": "freeze",
+    "floor work": "downrock",
+    "standing moves": "toprock",
+    "difficult move": "power move",
+    "dance circle": "cypher",
+    "female breaker": "b-girl",
+    "experienced dancer": "veteran",
+    "novice": "toy"
   },
   "suffixes": {
     "ing": "in'"

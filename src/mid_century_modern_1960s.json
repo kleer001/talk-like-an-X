@@ -129,7 +129,10 @@
     "sort of": "somewhat",
     "a lot": "quite a bit",
     "very much": "terribly",
-    "you know": "you see"
+    "you know": "you see",
+    "eames chair": "modern chair",
+    "danish modern": "Danish",
+    "refined": "polished"
   },
   "sentence_augmentation": [
     {

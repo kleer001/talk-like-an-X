@@ -152,7 +152,14 @@
     "kind of": "rather",
     "sort of": "somewhat",
     "a lot": "loads",
-    "very much": "awfully"
+    "very much": "awfully",
+    "teddy boy": "Ted",
+    "teddy girl": "Judy",
+    "edwardian style": "Edwardian",
+    "brothel creeper shoes": "creepers",
+    "drape jacket": "drape",
+    "duck's arse hair": "DA",
+    "gang fight": "rumble"
   },
   "sentence_augmentation": [
     {

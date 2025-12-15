@@ -116,7 +116,11 @@
     "kind of": "kinda",
     "sort of": "sorta",
     "very much": "way",
-    "you know": "y'know"
+    "you know": "y'know",
+    "flannel shirt": "flannel",
+    "corporate music": "mainstream",
+    "apathy": "whatever",
+    "seattle": "Seattle"
   },
   "suffixes": {
     "ing": "in'"

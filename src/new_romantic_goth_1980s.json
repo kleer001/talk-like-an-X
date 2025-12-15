@@ -109,7 +109,11 @@
     "sort of": "somewhat",
     "a lot": "terribly",
     "very much": "immensely",
-    "you know": "you see"
+    "you know": "you see",
+    "synthesizer": "synth",
+    "makeup": "face paint",
+    "androgynous": "gender-bending",
+    "theatrical": "dramatic"
   },
   "sentence_augmentation": [
     {

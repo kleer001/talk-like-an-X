@@ -172,7 +172,27 @@
     "sort of": "sorta",
     "a lot": "plenty",
     "very much": "real",
-    "you know": "you dig"
+    "you know": "you dig",
+    "yes sir": "righto",
+    "approved": "in the groove",
+    "unapproved": "corny",
+    "deceptive talk": "jive",
+    "musician": "blower",
+    "music session": "session",
+    "goodbye": "in the breeze",
+    "nice": "mellow",
+    "girl": "queen",
+    "boyfriend": "main man",
+    "attractive girl": "sharp chick",
+    "unattractive": "drag",
+    "impressive": "solid sender",
+    "stylish": "hep to the jive",
+    "dance well": "cut a mean rug",
+    "leave quickly": "take a powder",
+    "money": "green",
+    "wonderful": "out of this world",
+    "girlfriend": "main queen",
+    "excitement": "alligator"
   },
   "sentence_augmentation": [
     {

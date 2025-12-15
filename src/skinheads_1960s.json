@@ -145,7 +145,12 @@
     "sort of": "sorta",
     "a lot": "loads",
     "very much": "proper",
-    "you know": "innit"
+    "you know": "innit",
+    "boots": "bovver boots",
+    "troublemaker": "bovver boy",
+    "female skinhead": "skin girl",
+    "scooter": "scoot",
+    "sharp dressed": "smartly dressed"
   },
   "sentence_augmentation": [
     {

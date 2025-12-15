@@ -112,7 +112,14 @@
     "kind of": "kinda",
     "sort of": "somewhat",
     "a lot": "plenty",
-    "very much": "well"
+    "very much": "well",
+    "babylon": "Babylon",
+    "dreadlocks": "locks",
+    "rasta": "Rasta",
+    "haile selassie": "Jah Rastafari",
+    "ital food": "ital",
+    "ganja": "herb",
+    "righteous": "irie"
   },
   "sentence_augmentation": [
     {

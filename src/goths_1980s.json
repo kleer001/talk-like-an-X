@@ -153,7 +153,11 @@
     "sort of": "rather",
     "a lot": "greatly",
     "very much": "immensely",
-    "you know": "thou knowest"
+    "you know": "thou knowest",
+    "pale": "pallid",
+    "black clothing": "blacks",
+    "clove cigarette": "clove",
+    "romantic": "darkly romantic"
   },
   "sentence_augmentation": [
     {
