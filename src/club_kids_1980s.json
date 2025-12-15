@@ -2,7 +2,6 @@
   "name": "1980s Club Kids",
   "description": "House music, rave culture, neon dreams",
   "author": "Subculture slang dictionary",
-
   "substitutions": {
     "hello": "yo",
     "hi": "yo",
@@ -68,7 +67,6 @@
     "apartment": "pad",
     "room": "space",
     "understand": "feel",
-    "know": "know",
     "think": "reckon",
     "want": "need",
     "like": "vibe with",
@@ -127,19 +125,20 @@
     "very much": "super",
     "you know": "ya know"
   },
-
   "suffixes": {
     "ing": "in'"
   },
-
   "sentence_augmentation": [
     {
       "punctuation": "!",
-      "additions": [" No doubt!", " Fo real!", " Straight up!"],
+      "additions": [
+        " No doubt!",
+        " Fo real!",
+        " Straight up!"
+      ],
       "frequency": 3
     }
   ],
-
   "preserve_case": true,
   "word_boundary": true
 }

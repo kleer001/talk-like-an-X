@@ -2,7 +2,6 @@
   "name": "1970s Disco Enthusiast",
   "description": "Transforms text into far-out 1970s disco slang",
   "author": "Demo filter",
-
   "substitutions": {
     "hello": "hey baby",
     "hi": "hey baby",
@@ -65,7 +64,6 @@
     "tired": "burned out",
     "understand": "dig",
     "like": "dig",
-    "love": "love",
     "hate": "can't dig",
     "want": "dig",
     "need": "gotta have",
@@ -108,7 +106,6 @@
     "kind of": "kinda",
     "sort of": "kinda",
     "a lot": "a whole lotta",
-    "for sure": "for sure",
     "of course": "naturally",
     "i think": "i figure",
     "you know": "dig",
@@ -123,19 +120,23 @@
     "damn": "man",
     "darn": "shoot"
   },
-
   "suffixes": {
     "ing": "in'"
   },
-
   "sentence_augmentation": [
     {
       "punctuation": ".",
-      "additions": [" dig?", " you dig?", " baby!", " right on!", " can you dig it?", " far out!"],
+      "additions": [
+        " dig?",
+        " you dig?",
+        " baby!",
+        " right on!",
+        " can you dig it?",
+        " far out!"
+      ],
       "frequency": 3
     }
   ],
-
   "preserve_case": true,
   "word_boundary": true
 }

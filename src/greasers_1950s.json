@@ -2,7 +2,6 @@
   "name": "1950s Greasers",
   "description": "Rock and roll, hot rods, leather jackets, rebellion",
   "author": "Subculture slang dictionary",
-
   "substitutions": {
     "hello": "hey there",
     "hi": "hey daddy-o",
@@ -25,8 +24,6 @@
     "awful": "the worst",
     "fun": "kicks",
     "exciting": "wild",
-    "crazy": "crazy",
-    "wild": "wild",
     "strange": "weird",
     "weird": "freaky",
     "very": "real",
@@ -62,17 +59,14 @@
     "apartment": "crib",
     "room": "pad",
     "place": "joint",
-    "school": "school",
     "work": "the grind",
     "job": "gig",
     "working": "grinding",
     "money": "bread",
     "dollar": "buck",
     "expensive": "steep",
-    "cheap": "cheap",
     "clothes": "threads",
     "outfit": "getup",
-    "jacket": "jacket",
     "leather jacket": "leathers",
     "shoes": "kicks",
     "jeans": "dungarees",
@@ -84,7 +78,6 @@
     "alcohol": "juice",
     "beer": "suds",
     "police": "the fuzz",
-    "cops": "cops",
     "cop": "john law",
     "caught": "nabbed",
     "arrested": "pinched",
@@ -144,7 +137,6 @@
     "i don't know": "search me",
     "for sure": "sure thing",
     "of course": "sure",
-    "right now": "right now",
     "let's go": "let's split",
     "let's leave": "let's blow this joint",
     "going to": "gonna",
@@ -153,24 +145,27 @@
     "got to": "gotta",
     "kind of": "kinda",
     "sort of": "kinda",
-    "a lot": "a lot",
     "very much": "real",
     "you know": "dig"
   },
-
   "sentence_augmentation": [
     {
       "punctuation": "!",
-      "additions": [", daddy-o!", ", man!", ", cat!"],
+      "additions": [
+        ", daddy-o!",
+        ", man!",
+        ", cat!"
+      ],
       "frequency": 4
     },
     {
       "punctuation": ".",
-      "additions": [", dig?"],
+      "additions": [
+        ", dig?"
+      ],
       "frequency": 5
     }
   ],
-
   "preserve_case": true,
   "word_boundary": true
 }
