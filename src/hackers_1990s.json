@@ -2,7 +2,6 @@
   "name": "1990s Hackers",
   "description": "Cyberpunk culture, 1337 speak, phreaking, and digital rebellion",
   "author": "Subculture slang dictionary",
-
   "substitutions": {
     "hello": "greetings",
     "hi": "sup",
@@ -27,7 +26,6 @@
     "fun": "epic",
     "exciting": "sick",
     "crazy": "insane",
-    "wild": "wild",
     "strange": "weird",
     "weird": "bizarre",
     "very": "hella",
@@ -41,7 +39,6 @@
     "guy": "cat",
     "woman": "chick",
     "girl": "grl",
-    "hacker": "hacker",
     "newbie": "n00b",
     "expert": "wizard",
     "skilled": "1337",
@@ -62,12 +59,11 @@
     "place": "node",
     "work": "grind",
     "job": "gig",
-    "working": "grinding",
+    "working": "operational",
     "money": "cred",
     "dollar": "buck",
     "expensive": "costly",
     "cheap": "budget",
-    "broke": "broke",
     "rich": "flush",
     "computer": "box",
     "laptop": "portable",
@@ -94,7 +90,6 @@
     "access": "entry",
     "break in": "penetrate",
     "exploit": "own",
-    "virus": "virus",
     "bug": "glitch",
     "error": "fail",
     "crash": "bomb",
@@ -123,7 +118,6 @@
     "hidden": "stealth",
     "anonymous": "ghost",
     "understand": "grok",
-    "know": "know",
     "think": "compute",
     "believe": "reckon",
     "want": "need",
@@ -154,7 +148,6 @@
     "destroy": "obliterate",
     "fix": "patch",
     "broken": "borked",
-    "working": "operational",
     "fast": "blazing",
     "slow": "lagging",
     "smart": "brilliant",
@@ -183,20 +176,25 @@
     "very much": "totally",
     "you know": "y'know"
   },
-
   "sentence_augmentation": [
     {
       "punctuation": "!",
-      "additions": [" Hack the planet!", " Root access!", " pwned!"],
+      "additions": [
+        " Hack the planet!",
+        " Root access!",
+        " pwned!"
+      ],
       "frequency": 6
     },
     {
       "punctuation": ".",
-      "additions": [" Crash and burn.", " Game over."],
+      "additions": [
+        " Crash and burn.",
+        " Game over."
+      ],
       "frequency": 7
     }
   ],
-
   "preserve_case": true,
   "word_boundary": true
 }

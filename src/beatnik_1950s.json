@@ -2,7 +2,6 @@
   "name": "1950s Beatniks",
   "description": "Jazz poetry, coffee houses, bebop, and nonconformist cool",
   "author": "Subculture slang dictionary",
-
   "substitutions": {
     "hello": "hey man",
     "hi": "what's the riff",
@@ -26,7 +25,6 @@
     "fun": "kicks",
     "exciting": "wild",
     "crazy": "crazy man",
-    "wild": "wild",
     "strange": "way out",
     "weird": "far out",
     "very": "real",
@@ -48,7 +46,6 @@
     "dancing": "grooving",
     "music": "sounds",
     "song": "number",
-    "jazz": "jazz",
     "band": "combo",
     "car": "wheels",
     "house": "pad",
@@ -63,7 +60,6 @@
     "money": "bread",
     "dollar": "clam",
     "expensive": "steep",
-    "cheap": "cheap",
     "broke": "tapped out",
     "clothes": "threads",
     "outfit": "getup",
@@ -113,7 +109,6 @@
     "read": "dig",
     "book": "tome",
     "poem": "verse",
-    "poetry": "poetry",
     "write": "scribble",
     "art": "expression",
     "artist": "cat",
@@ -134,7 +129,6 @@
     "i don't know": "search me",
     "for sure": "solid",
     "of course": "naturally",
-    "right now": "right now",
     "let's go": "let's split",
     "going to": "gonna",
     "want to": "wanna",
@@ -146,24 +140,30 @@
     "very much": "real",
     "you know": "dig"
   },
-
   "suffixes": {
     "ing": "in'"
   },
-
   "sentence_augmentation": [
     {
       "punctuation": "!",
-      "additions": [", man!", ", daddy-o!", ", dig!", ", crazy!"],
+      "additions": [
+        ", man!",
+        ", daddy-o!",
+        ", dig!",
+        ", crazy!"
+      ],
       "frequency": 4
     },
     {
       "punctuation": ".",
-      "additions": [", dig?", ", you dig?", ", man."],
+      "additions": [
+        ", dig?",
+        ", you dig?",
+        ", man."
+      ],
       "frequency": 5
     }
   ],
-
   "preserve_case": true,
   "word_boundary": true
 }

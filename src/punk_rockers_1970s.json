@@ -2,7 +2,6 @@
   "name": "1970s Punk Rockers",
   "description": "Punk rock, DIY ethic, anti-establishment, safety pins and mohawks",
   "author": "Subculture slang dictionary",
-
   "substitutions": {
     "hello": "oi",
     "hi": "oi",
@@ -46,8 +45,6 @@
     "dancing": "moshing",
     "music": "tunes",
     "song": "track",
-    "band": "band",
-    "punk": "punk",
     "punk rock": "punk",
     "mainstream": "sellout",
     "popular": "mainstream",
@@ -56,7 +53,6 @@
     "fake": "poser",
     "clothes": "gear",
     "outfit": "rig",
-    "jacket": "jacket",
     "leather jacket": "leathers",
     "shoes": "boots",
     "boots": "docs",
@@ -70,7 +66,6 @@
     "money": "quid",
     "dollar": "quid",
     "expensive": "dear",
-    "cheap": "cheap",
     "broke": "skint",
     "rich": "loaded",
     "car": "motor",
@@ -80,8 +75,6 @@
     "place": "spot",
     "bar": "pub",
     "nightclub": "club",
-    "street": "street",
-    "city": "city",
     "work": "graft",
     "job": "gig",
     "working": "grafting",
@@ -126,27 +119,18 @@
     "relax": "chill",
     "calm": "sorted",
     "understand": "get it",
-    "know": "know",
     "think": "reckon",
     "believe": "reckon",
-    "want": "want",
     "like": "rate",
     "love": "proper love",
     "hate": "can't stand",
     "dislike": "hate",
-    "go": "go",
     "leave": "leg it",
     "run away": "scarper",
-    "come": "come",
     "arrive": "turn up",
-    "look": "look",
     "see": "clock",
-    "watch": "watch",
-    "listen": "listen",
     "talk": "chat",
     "speak": "talk",
-    "say": "say",
-    "tell": "tell",
     "shout": "yell",
     "idiot": "muppet",
     "fool": "plonker",
@@ -158,15 +142,12 @@
     "government": "the man",
     "authority": "the system",
     "establishment": "the establishment",
-    "society": "society",
     "how are you": "alright",
     "what's up": "what's occurring",
     "i don't know": "dunno",
     "for sure": "deffo",
     "of course": "course",
     "definitely": "deffo",
-    "right now": "right now",
-    "let's go": "let's go",
     "going to": "gonna",
     "want to": "wanna",
     "have to": "gotta",
@@ -177,19 +158,20 @@
     "very much": "proper",
     "you know": "yeah"
   },
-
   "suffixes": {
     "ing": "in'"
   },
-
   "sentence_augmentation": [
     {
       "punctuation": "!",
-      "additions": [", mate!", ", innit!", " Oi!"],
+      "additions": [
+        ", mate!",
+        ", innit!",
+        " Oi!"
+      ],
       "frequency": 4
     }
   ],
-
   "preserve_case": true,
   "word_boundary": true
 }

@@ -2,7 +2,6 @@
   "name": "1980s Hip Hop Breakers",
   "description": "Breaking, popping, locking, beatboxing, and street culture",
   "author": "Subculture slang dictionary",
-
   "substitutions": {
     "hello": "yo",
     "hi": "what's up",
@@ -18,12 +17,10 @@
     "amazing": "fresh",
     "cool": "fresh",
     "awesome": "def",
-    "nice": "nice",
     "bad": "wack",
     "terrible": "bogus",
     "boring": "played out",
     "awful": "corny",
-    "stupid": "stupid",
     "fun": "hype",
     "exciting": "live",
     "crazy": "wild",
@@ -59,12 +56,10 @@
     "bar": "spot",
     "street": "block",
     "neighborhood": "hood",
-    "city": "city",
     "car": "ride",
     "fancy car": "whip",
     "house": "crib",
     "apartment": "pad",
-    "room": "room",
     "place": "spot",
     "work": "hustle",
     "job": "gig",
@@ -72,14 +67,11 @@
     "money": "paper",
     "dollar": "buck",
     "expensive": "phat",
-    "cheap": "cheap",
-    "broke": "broke",
     "rich": "paid",
     "clothes": "gear",
     "outfit": "fit",
     "shoes": "kicks",
     "sneakers": "sneaks",
-    "jacket": "jacket",
     "hat": "lid",
     "style": "flavor",
     "fashionable": "fresh",
@@ -105,9 +97,7 @@
     "weapon": "piece",
     "tough": "hard",
     "weak": "soft",
-    "brave": "brave",
     "afraid": "shook",
-    "scared": "scared",
     "angry": "vexed",
     "upset": "salty",
     "annoyed": "heated",
@@ -118,19 +108,13 @@
     "exhausted": "dead",
     "energetic": "amped",
     "excited": "hype",
-    "bored": "bored",
     "relax": "chill",
     "calm": "cool out",
     "understand": "feel me",
-    "know": "know",
     "think": "figure",
-    "believe": "believe",
-    "want": "want",
     "like": "dig",
-    "love": "love",
     "hate": "can't stand",
     "dislike": "ain't feeling",
-    "need": "need",
     "go": "bounce",
     "leave": "jet",
     "come": "roll up",
@@ -144,8 +128,6 @@
     "listen": "check",
     "talk": "rap",
     "speak": "talk",
-    "say": "say",
-    "tell": "tell",
     "shout": "holler",
     "steal": "jack",
     "rob": "stick up",
@@ -154,14 +136,11 @@
     "dance move": "move",
     "breakdance": "break",
     "spin": "windmill",
-    "flip": "flip",
-    "beat": "beat",
     "rhythm": "flow",
     "sound system": "box",
     "radio": "box",
     "graffiti": "piece",
     "spray paint": "can",
-    "tag": "tag",
     "artist": "writer",
     "respect": "props",
     "disrespect": "dis",
@@ -185,7 +164,6 @@
     "i don't know": "dunno",
     "for sure": "no doubt",
     "of course": "word",
-    "right now": "right now",
     "let's go": "let's bounce",
     "going to": "gonna",
     "want to": "wanna",
@@ -197,24 +175,29 @@
     "very much": "crazy",
     "you know": "know what I'm sayin'"
   },
-
   "suffixes": {
     "ing": "in'"
   },
-
   "sentence_augmentation": [
     {
       "punctuation": "!",
-      "additions": [" Yo!", " Word!", " Fresh!"],
+      "additions": [
+        " Yo!",
+        " Word!",
+        " Fresh!"
+      ],
       "frequency": 4
     },
     {
       "punctuation": ".",
-      "additions": [" Word.", " Know what I'm sayin'?", " Feel me?"],
+      "additions": [
+        " Word.",
+        " Know what I'm sayin'?",
+        " Feel me?"
+      ],
       "frequency": 5
     }
   ],
-
   "preserve_case": true,
   "word_boundary": true
 }

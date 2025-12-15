@@ -2,7 +2,6 @@
   "name": "1950s IBM Engineers",
   "description": "Mainframes, punch cards, white shirts, and technical precision",
   "author": "Subculture slang dictionary",
-
   "substitutions": {
     "hello": "good day",
     "hi": "greetings",
@@ -23,7 +22,7 @@
     "terrible": "failure mode",
     "boring": "routine",
     "awful": "catastrophic",
-    "stupid": "illogical",
+    "stupid": "unintelligent",
     "fun": "recreational",
     "exciting": "stimulating",
     "crazy": "irrational",
@@ -46,20 +45,15 @@
     "ugly": "unattractive",
     "party": "social function",
     "dance": "social dancing",
-    "music": "music",
     "song": "musical number",
     "band": "orchestra",
     "bar": "lounge",
-    "nightclub": "nightclub",
     "car": "automobile",
     "house": "residence",
-    "apartment": "apartment",
-    "room": "room",
     "place": "location",
     "work": "employment",
     "job": "position",
-    "working": "employed",
-    "office": "office",
+    "working": "operational",
     "desk": "workstation",
     "computer": "electronic brain",
     "machine": "apparatus",
@@ -86,11 +80,9 @@
     "solution": "resolution",
     "fix": "correct",
     "broken": "inoperative",
-    "working": "operational",
     "test": "verify",
     "check": "inspect",
     "money": "remuneration",
-    "dollar": "dollar",
     "expensive": "costly",
     "cheap": "economical",
     "broke": "without funds",
@@ -100,15 +92,9 @@
     "suit": "business suit",
     "tie": "necktie",
     "shirt": "dress shirt",
-    "shoes": "shoes",
-    "pocket protector": "pocket protector",
     "glasses": "spectacles",
-    "cigarette": "cigarette",
-    "smoke": "smoke",
     "drink": "beverage",
     "alcohol": "spirits",
-    "beer": "beer",
-    "coffee": "coffee",
     "lunch": "midday meal",
     "dinner": "evening meal",
     "boss": "supervisor",
@@ -145,7 +131,6 @@
     "go": "proceed",
     "leave": "depart",
     "come": "arrive",
-    "arrive": "arrive",
     "look": "observe",
     "see": "observe",
     "watch": "monitor",
@@ -159,7 +144,6 @@
     "learn": "acquire knowledge",
     "teach": "instruct",
     "smart": "intelligent",
-    "stupid": "unintelligent",
     "difficult": "complex",
     "easy": "straightforward",
     "hard": "challenging",
@@ -184,15 +168,17 @@
     "very much": "greatly",
     "you know": "as you are aware"
   },
-
   "sentence_augmentation": [
     {
       "punctuation": ".",
-      "additions": [" Per specifications.", " As documented.", " Acknowledged."],
+      "additions": [
+        " Per specifications.",
+        " As documented.",
+        " Acknowledged."
+      ],
       "frequency": 6
     }
   ],
-
   "preserve_case": true,
   "word_boundary": true
 }

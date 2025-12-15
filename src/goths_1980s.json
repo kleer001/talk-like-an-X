@@ -2,7 +2,6 @@
   "name": "1980s Goths",
   "description": "Dark romanticism, post-punk, black clothes, and melancholic beauty",
   "author": "Subculture slang dictionary",
-
   "substitutions": {
     "hello": "greetings",
     "hi": "salutations",
@@ -47,7 +46,6 @@
     "party": "soiree",
     "dance": "sway",
     "dancing": "swaying",
-    "music": "music",
     "song": "dirge",
     "band": "ensemble",
     "nightclub": "club",
@@ -72,13 +70,11 @@
     "dark": "shadow",
     "makeup": "war paint",
     "eyeliner": "kohl",
-    "cigarette": "cigarette",
     "smoke": "inhale darkness",
     "drunk": "intoxicated",
     "drink": "imbibe",
     "alcohol": "spirits",
     "beer": "ale",
-    "wine": "wine",
     "police": "authorities",
     "trouble": "misfortune",
     "fight": "conflict",
@@ -97,9 +93,7 @@
     "relax": "repose",
     "calm": "serene",
     "understand": "comprehend",
-    "know": "know",
     "think": "ponder",
-    "believe": "believe",
     "want": "desire",
     "like": "fancy",
     "love": "adore",
@@ -161,15 +155,17 @@
     "very much": "immensely",
     "you know": "thou knowest"
   },
-
   "sentence_augmentation": [
     {
       "punctuation": ".",
-      "additions": [" Alas.", " How melancholy.", " Such darkness."],
+      "additions": [
+        " Alas.",
+        " How melancholy.",
+        " Such darkness."
+      ],
       "frequency": 5
     }
   ],
-
   "preserve_case": true,
   "word_boundary": true
 }

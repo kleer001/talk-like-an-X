@@ -1,6 +1,5 @@
 a lot
 access
-accessory
 acid house
 administrator
 advertising
@@ -8,8 +7,6 @@ afraid
 africa
 alcohol
 alienation
-ally
-alternative
 amateur
 amazing
 ambition
@@ -17,14 +14,11 @@ amphetamine
 amplifier
 angel
 angry
-angst
 annoyed
 annoying person
 anonymous
 apartment
 apathetic
-appointment
-architect
 argue
 arrested
 arrive
@@ -40,9 +34,6 @@ bad
 band
 bar
 barrel
-bass
-beach
-beat
 beautiful
 beauty
 beer
@@ -52,11 +43,7 @@ best friend
 big
 bike
 black
-blessed
 bmw
-board
-body
-bonus
 book
 boots
 bored
@@ -64,17 +51,14 @@ boring
 boss
 boyfriend
 bracelet
-braces
 brave
 break in
 breakdance
-breakfast
 briefcase
 broke
 broken
 bug
 build
-building
 bus
 business
 busy
@@ -86,11 +70,9 @@ calculator
 calm
 calm down
 car
-care
 career
 caught
 cemetery
-chain
 chair
 champagne
 cheap
@@ -99,21 +81,16 @@ cigarette
 cigarettes
 city
 classy
-client
 clothes
 club
 coat
-cocktail
 code
 coding
 coffee
 coffee shop
 cold
-comb
 come
 commercial
-commune
-community
 company
 compete
 competition
@@ -121,17 +98,14 @@ complain
 complicated
 computer
 concert
-condo
 conformist
 consciousness
-contract
 conventional
 cook
 cool
 cool person
 cop
 cops
-corporate
 corporation
 couch
 countryside
@@ -140,9 +114,7 @@ crash
 crazy
 crazy person
 create
-creep
 criminal
-cynical
 damn
 dance
 dance move
@@ -162,11 +134,8 @@ delete
 demon
 depressed
 depression
-design
-designer
 desk
 destroy
-devil
 die
 difficult
 dinner
@@ -182,8 +151,6 @@ dollar
 don't care
 download
 downtown
-drama
-dramatic
 dream
 dress
 drink
@@ -193,21 +160,17 @@ driving
 drugs
 drums
 drunk
-earth
 easy
 eat
 ecstasy
 elated
 elegant
 email
-emotion
 employee
-empowerment
 encryption
 enemy
 energetic
 enlightened
-equality
 error
 establishment
 ethiopia
@@ -222,55 +185,38 @@ expensive
 expert
 explain
 exploit
-expression
 extremely
 eyeliner
-factory
 failure
 fake
-famous
 fancy car
-farm
-fashion
 fashionable
 fast
 fast car
 fbi
 feeling
-feminism
-feminist
 fight
 fighting
 find
-fitness
 five dollars
 fix
-flannel
 flight jacket
-flip
 flip-flops
 flirt
-flower
-fly
 food
 fool
 for sure
-freedom
 friend
 friends
 fun
-furious
 furniture
 gang
 gangster
 geez
-generation
 ghost
 girl
 girlfriend
-glass
 glasses
-glow stick
 go
 god
 going to
@@ -284,13 +230,11 @@ graffiti
 grave
 great
 great person
-groove
 guitar
 gun
 guy
 gym
 hack
-hacker
 hacking
 hair
 haircut
@@ -304,18 +248,13 @@ hard
 hardware
 harlem
 harley
-harmony
 hat
 hate
 have to
-headband
 health
 hear
-heavy
-hell
 hello
 helmet
-heritage
 hey
 hi
 hidden
@@ -335,7 +274,6 @@ i don't care
 i don't know
 i think
 i understand
-ice
 idiot
 ignorant
 illegal
@@ -348,7 +286,6 @@ intellectual
 internet
 intoxicated
 investment
-ironic
 jacket
 jail
 jamaican
@@ -362,32 +299,25 @@ keyboard
 kick
 kind of
 kiss
-kitchen
 knife
 know
-knowledge
-lambretta
 lamp
 laptop
 law
 lazy
 leader
 learn
-leather
 leather jacket
 leave
 legal
 let's go
 let's leave
 lie
-lighter
 like
-lipstick
 liquor
 listen
 listen to
 living room
-local
 london
 lonely
 look
@@ -396,7 +326,6 @@ lose
 loser
 loud
 love
-loyalty
 lsd
 lunch
 machine
@@ -408,20 +337,15 @@ man
 manager
 marijuana
 marketing
-martini
 mdma
 meal
-meditation
 meeting
 member
 memo
 memory
 mercedes
 message
-metal
 mind
-misogyny
-mod
 modern
 mohawk
 money
@@ -430,11 +354,9 @@ moon
 motorcycle
 music
 musician
-natural
 nature
 necklace
 need
-negotiate
 neighborhood
 network
 newbie
@@ -445,29 +367,23 @@ night
 nightclub
 nightmare
 no
-ocean
 of course
-office
 oh my god
 ok
 okay
-oppress
 oppressed
 oppression
 optimistic
 organic
 out of
 outfit
-outlaw
 pacifier
 pain
 pants
-parka
 party
 passionate
 password
 patch
-patriarchy
 peace
 peace sign
 people
@@ -476,10 +392,8 @@ pessimistic
 philosopher
 phone
 piercing
-pills
 place
 pleased
-pocket protector
 poem
 poetry
 police
@@ -488,14 +402,11 @@ popular
 porsche
 poseur
 pound
-power
 powerful
 prayer
-predator
 presentation
 president
 pretty
-pride
 printer
 prison
 problem
@@ -503,11 +414,9 @@ processor
 program
 project
 promotion
-protest
 pub
 punch
 punch card
-punk
 punk rock
 quiet
 radio
@@ -518,48 +427,33 @@ read
 real
 really
 rebel
-reggae
 relax
 religion
 report
-resist
-resistance
 respect
 restaurant
-revolution
 rhythm
 rich
 ride
-riding
 right now
-righteous
 ripped
 rival
 rivalry
 road
 rob
-rock
 rock and roll
 rock music
-rocker
 romance
-romantic
 room
-rules
 run
 run away
 sad
 safe
 safety pin
 said
-sarcastic
-satan
 say
 scared
-school
-scooter
 scooter rally
-scream
 screen
 search
 secret
@@ -568,7 +462,6 @@ see
 sell
 sellout
 server
-sexism
 sexist
 shaved head
 shilling
@@ -578,24 +471,16 @@ shorts
 shout
 show
 sideburns
-silence
 simple
-sister
-ska
 skill
 skilled
 skilled dancer
-skirt
 slow
 small
 smart
 smoke
 sneakers
-society
-sofa
-soft
 software
-solidarity
 solution
 song
 sophisticated
@@ -608,7 +493,6 @@ speakeasy
 spin
 spiritual
 spray paint
-square
 steal
 stock
 strange
@@ -625,19 +509,13 @@ suffering
 suit
 sunburn
 sunglasses
-support
-surf
 surfboard
-surfing
 surveillance
 suspenders
 swimsuit
-swing
 swing dancing
 system
 t-shirt
-table
-tag
 talent
 talk
 talking
@@ -647,7 +525,6 @@ tape
 task
 tattoo
 teach
-techno
 technology
 telephone
 tell
@@ -658,73 +535,51 @@ territory
 test
 that is great
 that's great
-theatrical
 thief
 think
 tie
-tie-dye
 tired
 tough
 tourist
 track
-trade
-tradition
-travel
-trip
 trouble
 troublemaker
-truck
 truth
 ugly
 underground
 understand
 unemployed
-unity
 universe
 upload
 upset
 vacation
 vampire
 van
-venue
 very
 very good
 very much
-vespa
 vest
 violent
-virus
-voice
-volume
 walk
 want
 want to
-war
-warehouse
 watch
 water
-wave
 weak
 wealthy
 weapon
 website
 weird
-wetsuit
 what's up
-whine
 whiskey
-whistle
 wicked
 wife
 wild
 win
 wine
 winner
-wipeout
-wisdom
 woman
 work
-worker
 working
 working class
 wow
@@ -732,6 +587,4 @@ write
 yell
 yes
 you know
-youth
-zine
 zoot suit

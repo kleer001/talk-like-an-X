@@ -2,7 +2,6 @@
   "name": "1940s Zoot Suiters",
   "description": "Swing jazz, zoot suits, jive talk, and smooth style",
   "author": "Subculture slang dictionary",
-
   "substitutions": {
     "hello": "hiya",
     "hi": "hey there",
@@ -26,8 +25,6 @@
     "stupid": "corny",
     "fun": "a ball",
     "exciting": "jumping",
-    "crazy": "crazy",
-    "wild": "wild",
     "strange": "screwy",
     "weird": "goofy",
     "very": "real",
@@ -52,7 +49,6 @@
     "music": "jive",
     "song": "tune",
     "jazz": "jive",
-    "swing": "swing",
     "band": "combo",
     "musician": "jiver",
     "nightclub": "juke joint",
@@ -73,7 +69,6 @@
     "five dollars": "fin",
     "ten dollars": "sawbuck",
     "expensive": "steep",
-    "cheap": "cheap",
     "broke": "tapped out",
     "rich": "loaded",
     "clothes": "drapes",
@@ -84,9 +79,7 @@
     "pants": "pegs",
     "shoes": "stomps",
     "hat": "lid",
-    "tie": "tie",
-    "chain": "chain",
-    "watch": "ticker",
+    "watch": "pipe",
     "cigarette": "coffin nail",
     "smoke": "puff",
     "drunk": "fried",
@@ -95,7 +88,6 @@
     "alcohol": "juice",
     "liquor": "giggle water",
     "beer": "suds",
-    "whiskey": "whiskey",
     "wine": "vino",
     "police": "the man",
     "cop": "flatfoot",
@@ -112,7 +104,6 @@
     "weak": "soft",
     "brave": "game",
     "afraid": "yellow",
-    "scared": "scared",
     "angry": "hot",
     "upset": "bent",
     "annoyed": "burned",
@@ -135,7 +126,6 @@
     "like": "dig",
     "love": "gone on",
     "hate": "can't dig",
-    "need": "need",
     "go": "cut out",
     "leave": "blow",
     "come": "fall by",
@@ -145,7 +135,6 @@
     "hurry": "pour it on",
     "look": "lamp",
     "see": "dig",
-    "watch": "pipe",
     "listen": "tune in",
     "talk": "jive",
     "speak": "sound",
@@ -161,12 +150,9 @@
     "swing dancing": "Lindy Hop",
     "skilled dancer": "hep cat",
     "rhythm": "beat",
-    "beat": "beat",
-    "groove": "groove",
     "cool person": "solid sender",
     "stylish": "drape shape",
     "fashionable": "sharp",
-    "square": "square",
     "conformist": "square",
     "rebel": "hep cat",
     "idiot": "square",
@@ -180,10 +166,7 @@
     "i don't know": "search me",
     "for sure": "solid",
     "of course": "sure thing",
-    "right now": "right now",
     "let's go": "let's cut out",
-    "going to": "going to",
-    "want to": "want to",
     "have to": "got to",
     "kind of": "kinda",
     "sort of": "sorta",
@@ -191,20 +174,26 @@
     "very much": "real",
     "you know": "you dig"
   },
-
   "sentence_augmentation": [
     {
       "punctuation": "!",
-      "additions": [" Solid!", " Groovy!", " Hep cat!"],
+      "additions": [
+        " Solid!",
+        " Groovy!",
+        " Hep cat!"
+      ],
       "frequency": 4
     },
     {
       "punctuation": ".",
-      "additions": [" Dig?", " You dig?", " Jackson."],
+      "additions": [
+        " Dig?",
+        " You dig?",
+        " Jackson."
+      ],
       "frequency": 5
     }
   ],
-
   "preserve_case": true,
   "word_boundary": true
 }

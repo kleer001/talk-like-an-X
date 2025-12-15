@@ -2,7 +2,6 @@
   "name": "1960s Surfers",
   "description": "Beach culture, hang ten, endless summer, and stoke",
   "author": "Subculture slang dictionary",
-
   "substitutions": {
     "hello": "hey",
     "hi": "howzit",
@@ -27,7 +26,6 @@
     "fun": "rad",
     "exciting": "stoked",
     "crazy": "psycho",
-    "wild": "wild",
     "strange": "weird",
     "weird": "sketchy",
     "very": "totally",
@@ -46,40 +44,24 @@
     "handsome": "stoked",
     "ugly": "gnarly",
     "party": "luau",
-    "dance": "dance",
     "music": "tunes",
     "song": "tune",
-    "band": "band",
     "concert": "jam",
     "nightclub": "club",
     "bar": "tiki bar",
-    "beach": "beach",
-    "ocean": "ocean",
-    "wave": "wave",
-    "surf": "surf",
-    "surfing": "surfing",
     "surfboard": "stick",
-    "board": "board",
     "ride": "session",
-    "wipeout": "wipeout",
     "barrel": "tube",
     "car": "woody",
-    "van": "van",
     "house": "pad",
     "apartment": "crib",
-    "room": "room",
     "place": "spot",
-    "work": "work",
     "job": "gig",
-    "working": "working",
     "money": "bread",
     "expensive": "steep",
-    "cheap": "cheap",
-    "broke": "broke",
     "clothes": "threads",
     "shorts": "baggies",
     "swimsuit": "trunks",
-    "wetsuit": "wetsuit",
     "shoes": "sandals",
     "flip-flops": "slippers",
     "sunglasses": "shades",
@@ -112,14 +94,11 @@
     "relax": "hang loose",
     "calm": "mellow",
     "understand": "dig",
-    "know": "know",
-    "think": "think",
     "believe": "reckon",
     "want": "dig",
     "like": "dig",
     "love": "stoked on",
     "hate": "harsh on",
-    "need": "need",
     "go": "cruise",
     "leave": "bail",
     "come": "paddle in",
@@ -132,12 +111,10 @@
     "listen": "dig",
     "talk": "rap",
     "speak": "shoot",
-    "say": "say",
     "tell": "clue",
     "big": "mondo",
     "huge": "massive",
     "small": "dinky",
-    "fast": "fast",
     "slow": "slack",
     "hot": "scorching",
     "cold": "freezing",
@@ -147,8 +124,6 @@
     "expert": "soul surfer",
     "skilled": "rad",
     "tourist": "barney",
-    "local": "local",
-    "respect": "respect",
     "idiot": "kook",
     "fool": "barney",
     "jerk": "hodad",
@@ -157,9 +132,7 @@
     "how are you": "howzit",
     "what's up": "what's the swell",
     "i don't know": "beats me",
-    "for sure": "for sure",
     "of course": "no doubt",
-    "right now": "right now",
     "let's go": "let's shred",
     "going to": "gonna",
     "want to": "wanna",
@@ -171,24 +144,29 @@
     "very much": "totally",
     "you know": "ya know"
   },
-
   "suffixes": {
     "ing": "in'"
   },
-
   "sentence_augmentation": [
     {
       "punctuation": "!",
-      "additions": [" Cowabunga!", " Radical!", " Hang ten!"],
+      "additions": [
+        " Cowabunga!",
+        " Radical!",
+        " Hang ten!"
+      ],
       "frequency": 4
     },
     {
       "punctuation": ".",
-      "additions": [" Brah.", " Dude.", " Aloha."],
+      "additions": [
+        " Brah.",
+        " Dude.",
+        " Aloha."
+      ],
       "frequency": 5
     }
   ],
-
   "preserve_case": true,
   "word_boundary": true
 }
