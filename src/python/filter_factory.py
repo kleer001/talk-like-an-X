@@ -212,8 +212,9 @@ def find_filter_file(filter_name: str) -> Path:
 
     # Search locations
     search_paths = [
-        Path.cwd() / filter_name,                    # Current directory
-        Path(__file__).parent / filter_name,         # Script directory
+        Path.cwd() / filter_name,                              # Current directory
+        Path(__file__).parent.parent / 'filters' / filter_name,  # src/filters/
+        Path(__file__).parent / filter_name,                   # Script directory (legacy)
     ]
 
     for path in search_paths:
