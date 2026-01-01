@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Talk Like An X - Interactive Demo</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Talk Like An X</h1>
+            <p class="subtitle">Transform your text into different dialects, accents, and subcultures</p>
+        </header>
+
+        <main>
+            <div class="controls">
+                <label for="filter-select">Choose a filter:</label>
+                <select id="filter-select" class="filter-dropdown">
+                    <option value="">Select a style...</option>
+                    {% for filter in filters %}
+                    <option value="{{ filter.id }}">{{ filter.name }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+
+            <div class="text-areas">
+                <div class="input-section">
+                    <label for="input-text">Input Text:</label>
+                    <textarea
+                        id="input-text"
+                        class="text-input"
+                        placeholder="Enter text to transform..."
+                        rows="10"
+                    >Hello friend! How are you doing today? I hope everything is going well.</textarea>
+                </div>
+
+                <div class="output-section">
+                    <label for="output-text">Transformed Text:</label>
+                    <textarea
+                        id="output-text"
+                        class="text-output"
+                        placeholder="Transformed text will appear here..."
+                        rows="10"
+                        readonly
+                    ></textarea>
+                </div>
+            </div>
+
+            <div class="button-container">
+                <button id="transform-btn" class="transform-button">Transform</button>
+                <button id="clear-btn" class="clear-button">Clear</button>
+            </div>
+
+            <div id="error-message" class="error-message" style="display: none;"></div>
+        </main>
+
+        <footer>
+            <p>
+                Built with the <a href="https://github.com/kleer001/talk-like-an-X" target="_blank">Talk Like An X</a> library
+            </p>
+        </footer>
+    </div>
+
+    <script>
+        const filterSelect = document.getElementById('filter-select');
+        const inputText = document.getElementById('input-text');
+        const outputText = document.getElementById('output-text');
+        const transformBtn = document.getElementById('transform-btn');
+        const clearBtn = document.getElementById('clear-btn');
+        const errorMessage = document.getElementById('error-message');
+
+        function showError(message) {
+            errorMessage.textContent = message;
+            errorMessage.style.display = 'block';
+            setTimeout(() => {
+                errorMessage.style.display = 'none';
+            }, 5000);
+        }
+
+        function hideError() {
+            errorMessage.style.display = 'none';
+        }
+
+        async function transformText() {
+            const filter = filterSelect.value;
+            const text = inputText.value.trim();
+
+            if (!filter) {
+                showError('Please select a filter');
+                return;
+            }
+
+            if (!text) {
+                showError('Please enter some text to transform');
+                return;
+            }
+
+            hideError();
+            transformBtn.disabled = true;
+            transformBtn.textContent = 'Transforming...';
+
+            try {
+                const response = await fetch('/transform', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ filter, text }),
+                });
+
+                const data = await response.json();
+
+                if (response.ok) {
+                    outputText.value = data.result;
+                } else {
+                    showError(data.error || 'Transformation failed');
+                }
+            } catch (error) {
+                showError('Network error: ' + error.message);
+            } finally {
+                transformBtn.disabled = false;
+                transformBtn.textContent = 'Transform';
+            }
+        }
+
+        function clearAll() {
+            inputText.value = '';
+            outputText.value = '';
+            filterSelect.value = '';
+            hideError();
+        }
+
+        transformBtn.addEventListener('click', transformText);
+        clearBtn.addEventListener('click', clearAll);
+
+        filterSelect.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') transformText();
+        });
+
+        inputText.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter' && e.ctrlKey) transformText();
+        });
+    </script>
+</body>
+</html>

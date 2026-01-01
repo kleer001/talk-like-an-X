@@ -76,6 +76,26 @@ cd src
 
 That's it! See [`src/README.md`](src/README.md) for complete documentation.
 
+### Web Demo
+
+Try all filters interactively in your browser:
+
+```bash
+# Install dependencies
+pip install -r requirements.txt
+
+# Run the web demo
+python3 web/app.py
+
+# Open http://localhost:5000 in your browser
+```
+
+The web demo provides an interactive interface to:
+- Try all 40+ filters instantly
+- Transform text in real-time
+- Compare input and output side-by-side
+- No command-line knowledge needed
+
 ---
 
 ## 📚 Documentation
