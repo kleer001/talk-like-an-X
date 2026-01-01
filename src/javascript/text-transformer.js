@@ -184,39 +184,6 @@ class SentenceAugmenter {
 }
 
 /**
- * Glitch transformer (corruption effect).
- */
-class GlitchTransformer {
-    static GLITCH_CHARS = [
-        '█', '▓', '▒', '░', '▀', '▄', '▌', '▐', '■', '□',
-        '▪', '▫', '▬', '▭', '▮', '▯', '▰', '▱', '▲', '△',
-        '▴', '▵', '▶', '▷', '▸', '▹', '►', '▻', '▼', '▽',
-        '▾', '▿', '◀', '◁', '◂', '◃', '◄', '◅', '◆', '◇',
-        '◈', '◉', '◊', '○', '◌', '◍', '◎', '●', '◐', '◑',
-        '◒', '◓', '◔', '◕', '◖', '◗', '◘', '◙', '◚', '◛',
-    ];
-
-    constructor(percentage = 100, seed = 42) {
-        this.percentage = percentage;
-        this.random = new SeededRandom(seed);
-    }
-
-    transform(text) {
-        const result = [];
-
-        for (const char of text) {
-            if (/[a-zA-Z0-9]/.test(char) && this.random.randInt(1, 100) <= this.percentage) {
-                result.push(this.random.choice(GlitchTransformer.GLITCH_CHARS));
-            } else {
-                result.push(char);
-            }
-        }
-
-        return result.join('');
-    }
-}
-
-/**
  * Seeded random number generator for reproducible results.
  */
 class SeededRandom {
