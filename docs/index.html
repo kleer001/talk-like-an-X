@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Talk Like An X - Interactive Demo</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/text-transformer.js"></script>
+    <script src="js/special-filters.js"></script>
+    <script src="js/filter-factory.js"></script>
+    <script src="js/app.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Talk Like An X</h1>
+            <p class="subtitle">Transform your text into different dialects, accents, and subcultures</p>
+        </header>
+
+        <main>
+            <div class="controls">
+                <label for="filter-select">Choose a filter:</label>
+                <select id="filter-select" class="filter-dropdown">
+                    <option value="">Select a style...</option>
+                </select>
+            </div>
+
+            <div class="text-areas">
+                <div class="input-section">
+                    <label for="input-text">Input Text:</label>
+                    <textarea
+                        id="input-text"
+                        class="text-input"
+                        placeholder="Enter text to transform..."
+                        rows="10"
+                    >Hello friend! How are you doing today? I hope everything is going well.</textarea>
+                </div>
+
+                <div class="output-section">
+                    <label for="output-text">Transformed Text:</label>
+                    <textarea
+                        id="output-text"
+                        class="text-output"
+                        placeholder="Transformed text will appear here..."
+                        rows="10"
+                        readonly
+                    ></textarea>
+                </div>
+            </div>
+
+            <div class="button-container">
+                <button id="transform-btn" class="transform-button">Transform</button>
+                <button id="clear-btn" class="clear-button">Clear</button>
+            </div>
+
+            <div id="error-message" class="error-message" style="display: none;"></div>
+        </main>
+
+        <footer>
+            <p>
+                Built with the <a href="https://github.com/kleer001/talk-like-an-X" target="_blank">Talk Like An X</a> library
+            </p>
+            <p style="margin-top: 0.5rem; font-size: 0.9rem;">
+                Pure JavaScript - No server required - Works offline
+            </p>
+        </footer>
+    </div>
+</body>
+</html>
