@@ -14,7 +14,7 @@ from pathlib import Path
 from typing import Dict, List
 from flask import Flask, render_template, request, jsonify
 
-sys.path.insert(0, str(Path(__file__).parent.parent / 'src'))
+sys.path.insert(0, str(Path(__file__).parent.parent / 'src' / 'python'))
 
 from filter_factory import FilterFactory
 
@@ -92,7 +92,7 @@ class WebDemo:
 
 
 app = Flask(__name__)
-demo = WebDemo(Path(__file__).parent.parent / 'src')
+demo = WebDemo(Path(__file__).parent.parent / 'src' / 'filters')
 
 
 @app.route('/')

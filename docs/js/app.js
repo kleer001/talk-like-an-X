@@ -95,7 +95,7 @@ class TalkLikeAnXApp {
             return this.filterCache.get(filterId);
         }
 
-        const url = `../src/${filterId}.json`;
+        const url = `../src/filters/${filterId}.json`;
         const filter = await FilterFactory.fromJsonFile(url);
         this.filterCache.set(filterId, filter);
         return filter;
