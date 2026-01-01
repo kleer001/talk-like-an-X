@@ -25,7 +25,7 @@ class DuckTransformer {
         }
 
         function duckWord(match) {
-            const word = match[0];
+            const word = match;
             const length = word.length;
 
             let duck;

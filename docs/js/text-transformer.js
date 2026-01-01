@@ -235,7 +235,7 @@ class SeededRandom {
 
     random() {
         this.state = (this.a * this.state + this.c) % this.m;
-        return this.state / (this.m - 1);
+        return this.state / this.m;
     }
 
     choice(array) {

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Bug Test</title>
+    <script src="js/text-transformer.js"></script>
+    <script src="js/special-filters.js"></script>
+    <style>
+        body { font-family: monospace; padding: 20px; }
+        .pass { color: green; }
+        .fail { color: red; }
+    </style>
+</head>
+<body>
+    <h1>JavaScript Bug Tests</h1>
+    <div id="results"></div>
+    <script>
+        const results = document.getElementById('results');
+
+        function test(name, actual, expected) {
+            const pass = actual === expected;
+            const cls = pass ? 'pass' : 'fail';
+            const symbol = pass ? '✓' : '✗';
+            results.innerHTML += `<div class="${cls}">${symbol} ${name}: "${actual}" ${pass ? '===' : '!=='} "${expected}"</div>`;
+        }
+
+        // Test SeededRandom range
+        const rng = new SeededRandom(42);
+        let hasOutOfRange = false;
+        for (let i = 0; i < 1000; i++) {
+            const val = rng.random();
+            if (val < 0 || val >= 1) {
+                hasOutOfRange = true;
+                results.innerHTML += `<div class="fail">✗ SeededRandom.random() out of range: ${val}</div>`;
+                break;
+            }
+        }
+        if (!hasOutOfRange) {
+            results.innerHTML += `<div class="pass">✓ SeededRandom.random() in range [0, 1)</div>`;
+        }
+
+        // Test randInt range
+        const rng2 = new SeededRandom(42);
+        let hasRandIntError = false;
+        for (let i = 0; i < 1000; i++) {
+            const val = rng2.randInt(1, 100);
+            if (val < 1 || val > 100) {
+                hasRandIntError = true;
+                results.innerHTML += `<div class="fail">✗ SeededRandom.randInt(1, 100) out of range: ${val}</div>`;
+                break;
+            }
+        }
+        if (!hasRandIntError) {
+            results.innerHTML += `<div class="pass">✓ SeededRandom.randInt() in range</div>`;
+        }
+
+        // Test Duck transformer
+        const duck = new DuckTransformer();
+        test('Duck "Hello world"', duck.transform('Hello world'), 'Quack quack');
+        test('Duck "I am"', duck.transform('I am'), 'QUA qua');
+        test('Duck "Transformation"', duck.transform('Transformation'), 'Quackquack');
+
+        // Test Studly
+        const studly = new StudlyTransformer(42);
+        test('Studly "hello"', studly.transform('hello'), 'hELLo');
+
+        // Test Glitch determinism
+        const glitch1 = new GlitchTransformer(50, 123);
+        const glitch2 = new GlitchTransformer(50, 123);
+        const r1 = glitch1.transform('test');
+        const r2 = glitch2.transform('test');
+        test('Glitch determinism', r1, r2);
+    </script>
+</body>
+</html>
