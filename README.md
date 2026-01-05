@@ -44,7 +44,7 @@ Transform normal English text in various fun ways - from pirate speak to compute
 
 ### Interactive Web Demo (Recommended)
 
-**[→ Open the interactive demo](docs/index.html)** (or [try it online](https://kleer001.github.io/talk-like-an-X/))
+**[Try the Live Demo](https://kleer001.github.io/talk-like-an-X/)**
 
 The static web demo runs entirely in your browser:
 - Try all 40+ filters instantly
